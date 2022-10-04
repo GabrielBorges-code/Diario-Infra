@@ -1,8 +1,10 @@
+import Container from "../../Components/Container/Index";
+
 function ShiftChange() {
     return(
-        <h1>
-            Passagem de turnos
-        </h1>
+        <Container>
+            <h1>Turnos Anteriores</h1>
+        </Container>
     );
 }
 

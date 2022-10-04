@@ -1,8 +1,15 @@
+import style from "./style.module.css";
+import githubicon from "../../assets/icons/github.png";
+
 function Footer() {
     return(
-        <p>
-            Olá sou um footer
-        </p>
+        <footer className={style.footer}>
+            <a href="https://github.com/GabrielBorges-code/Diario-Infra" target="_blank" rel="noopener noreferrer">
+                <img src={githubicon} alt="github icon" />
+            </a>
+
+            <p>Feito pela <span>equipe NOC</span> &copy; 2022</p>
+        </footer>
     );
 }
 

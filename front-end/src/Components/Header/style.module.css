@@ -1,0 +1,42 @@
+
+
+.heading {
+    width: 100%;
+    background-color: var(--background);
+    height: 120px;
+    display: flex;
+    /* justify-content: space-between; */
+    
+}
+
+.navBar {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 1200px;
+    /* background-color: red; */
+    margin: auto;
+}
+
+.list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+
+}
+
+.item {
+    margin-right: 1em;
+}
+
+.item a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: bold;
+}
+
+.item a:hover {
+    color: var(--white);
+    text-decoration: underline;
+    /* list-style: ; */
+}

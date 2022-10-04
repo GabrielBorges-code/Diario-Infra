@@ -1,0 +1,29 @@
+.footer {
+    color: var(--white);
+    background-color: var(--background);
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* text-align: center; */
+    flex-direction: column;
+    /* justify-content: flex-start; */
+    
+}
+
+.footer a {
+    transition: transform 0.5s;
+    
+}
+
+.footer a:hover {
+    transform: scale(1.1);
+}
+
+.footer p {
+    margin-top: 10px;
+}
+
+.footer p span {
+    color: var(--green)
+}

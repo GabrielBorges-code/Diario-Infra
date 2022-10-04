@@ -1,8 +1,12 @@
+import Container from "../../Components/Container/Index";
+
 function PreviousShift() {
     return(
-        <h1>
-            Turnos Anteriores
-        </h1>
+        <Container>
+            
+            <h2>Passagem de turno</h2>
+
+        </Container>
     );
 }
 

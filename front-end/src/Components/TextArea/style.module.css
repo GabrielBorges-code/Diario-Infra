@@ -4,6 +4,8 @@
     border-radius: 5px;
     background-color: var(--text);
     margin: 15px 0;
+    padding: 0;
+    border: none;
 }
 
 .textarea, .label {

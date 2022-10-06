@@ -9,6 +9,8 @@
     height: 40px;
     border-radius: 5px;
     transition: 0.5s;
+    display: block;
+    margin: 0 auto;
     
 }
 

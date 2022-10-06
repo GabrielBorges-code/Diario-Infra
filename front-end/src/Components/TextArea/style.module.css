@@ -1,0 +1,13 @@
+.textarea {
+    width: 100%;
+    height: 200px;
+    border-radius: 5px;
+    background-color: var(--text);
+    margin: 15px 0;
+}
+
+.textarea, .label {
+    font-size: 1.75em;
+    color: var(--white);
+    
+}

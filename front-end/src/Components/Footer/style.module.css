@@ -25,5 +25,6 @@
 }
 
 .footer p span {
-    color: var(--green)
+    color: var(--green);
+    font-weight: bold;
 }

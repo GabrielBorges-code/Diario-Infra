@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "41678da9-10ab-4bff-9dce-1b8c301651fe",
+		"name": "Diario_Infra",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11739350"
+	},
+	"item": [
+		{
+			"name": "Busca Todos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/diario-infra",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"diario-infra"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Busca Um",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/diario-infra/8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"diario-infra",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualiza Turno",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"shift\": \"Turno \", \r\n    \"date_and_time_ticket\": \" 13/10/2022 16:54\", \r\n    \"num_ticket\": \"123456\", \r\n    \"requisition_type\": \"Incidente\", \r\n    \"responsible_NOC\": \"Gabriel Borges\", \r\n    \"priority\": \"Média\", \r\n    \"intermittent\": \"Sim\", \r\n    \"responsible_island\": \"Ilha ]teste\", \r\n    \"responsible_triggered\": \"Claúdio\", \r\n    \"activation_time\": \"23:10\", \r\n    \"out_of_office\": \"Sim\", \r\n    \"status\": \"Aberto\", \r\n    \"warning_email\": \"Sim\", \r\n    \"type_of_activation\": \"Ligação\", \r\n    \"note\": \"Vasco da Gama\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/diario-infra/8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"diario-infra",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deleta Turno",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/diario-infra/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"diario-infra",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Inserir Turno",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"shift\": \"Noturno\", \r\n    \"date_and_time_ticket\": \" 23/10/2022 23:00\", \r\n    \"num_ticket\": \"357951\", \r\n    \"requisition_type\": \"Solicitação\", \r\n    \"responsible_NOC\": \"João Gabriel\", \r\n    \"priority\": \"Média\", \r\n    \"intermittent\": \"Sim\", \r\n    \"responsible_island\": \"Ilha Banco de Dados\", \r\n    \"responsible_triggered\": \"Claúdio\", \r\n    \"activation_time\": \"23:10\", \r\n    \"out_of_office\": \"Sim\", \r\n    \"status\": \"Aberto\", \r\n    \"warning_email\": \"Sim\", \r\n    \"type_of_activation\": \"Ligação\", \r\n    \"note\": \"Essa é um observação um pouco mais extensa porque eu não sei o q estou falando, as vezes eu quero almoçar novamente\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/diario-infra",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"diario-infra"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

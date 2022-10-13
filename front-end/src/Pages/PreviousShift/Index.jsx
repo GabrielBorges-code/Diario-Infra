@@ -16,17 +16,17 @@ function PreviousShift() {
             <Select label="Turno" options={["Noturno", "Diurno"]}/>
             <Input label="Data e Hora do CA" type="datetime-local" />
             <Input label="Número do Chamado"/>
-            <Input label="Tipo de Requisição"/>
+            {/* <Input label="Tipo de Requisição"/> */}
             <Select label="NOC Respnsável" options={["João Gabriel", "Gabriel Borges", "Pablo Caldas", "Jonathan Bispo"]}/>
             <Select label="Tipo de Requisição" options={["Chamado", "Atenção"]}/>
             <Input label="Prioridade"/>
             <Select label="Intermitências" options={["Sim", "Não"]}/>
             <Select label="Ilha responsável" options={["Ilha Windos", "Ilha Linux", "Ilha Redes", "Ilha Banco de Dados", "Ilha Deploy Windows", "Ilha Deploy Linux", "Ilha Segurança"]}/>
-            <Select label="Intermitências" options={["Sim", "Não"]}/>
+            {/* <Select label="Intermitências" options={["Sim", "Não"]}/> */}
             <Input label="Hora do acionamento"/>
-            <Select label="Intermitências" options={["Sim", "Não"]}/>
+            {/* <Select label="Intermitências" options={["Sim", "Não"]}/> */}
             <Input label="Status"/>
-            <Select label="Intermitências" options={["Sim", "Não"]}/>
+            {/* <Select label="Intermitências" options={["Sim", "Não"]}/> */}
             <Input label="Tipo de acionamento"/>
 
             <TextArea label="Observação (textarea)" />

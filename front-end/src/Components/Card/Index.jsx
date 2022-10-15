@@ -5,23 +5,32 @@ import Delete from "../../assets/icons/delete.png";
 
 import View  from "../../assets/icons/view.png";
 
+// function List({
+//     id,     
+//     turno, 
+//     dataEHora, 
+//     nChamado, 
+//     tipoRequisicao, 
+//     nocResponsavel, 
+//     prioridade, 
+//     intermitencia, 
+//     ilhaResponsavel, 
+//     responsavelAcionado, 
+//     horaAcionamento, 
+//     foraDoExpediente, 
+//     status, 
+//     emailDeAviso, 
+//     tipoDeAcionamento, 
+//     observacao
+// }) {
 function List({
-    id,     
     turno, 
     dataEHora, 
     nChamado, 
     tipoRequisicao, 
     nocResponsavel, 
     prioridade, 
-    intermitencia, 
-    ilhaResponsavel, 
-    responsavelAcionado, 
-    horaAcionamento, 
-    foraDoExpediente, 
-    status, 
-    emailDeAviso, 
-    tipoDeAcionamento, 
-    observacao
+    
 }) {
     return(
         <div className={style.card}>

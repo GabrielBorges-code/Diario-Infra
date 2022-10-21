@@ -32,6 +32,10 @@
 
 }
 
+.iconsbottom {
+    margin-bottom: 7px;
+}
+
 .table tr td span {
     font-weight: bold; 
     /* margin: 10 0; */
@@ -41,10 +45,6 @@
 
 .img {
     filter: brightness(100);
-
-}
-
-.img {
     cursor: pointer;
     /* transition: 0.3s; */
 

@@ -1,7 +1,7 @@
 import style from "./style.module.css";
 import githubicon from "../../assets/icons/github.png";
 
-function Footer() {
+export default function Footer() {
     return(
         <footer className={style.footer}>
             <a href="https://github.com/GabrielBorges-code/Diario-Infra" target="_blank" rel="noopener noreferrer">
@@ -13,4 +13,4 @@ function Footer() {
     );
 }
 
-export default Footer;
+// Footer;

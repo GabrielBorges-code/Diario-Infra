@@ -1,29 +1,29 @@
-const CarroService = require("../services/CarroService");
+const DiaryService = require("../services/DiaryService");
 
 module.exports = {
     buscarTodos: async (req, res) => {
         let json = {error: "", result:[]};
 
-        let turnos = await CarroService.buscarTodos();
+        let turnos = await DiaryService.buscarTodos();
 
         for(let i in turnos) {
             json.result.push({
                 id: turnos[i].id,
-                turno: turnos[i].shift, 
-                data_hora_chamado: turnos[i].date_and_time_ticket, 
-                Num_chamado: turnos[i].num_ticket, 
-                tipo_de_requisição: turnos[i].requisition_type, 
-                NOC_responsável: turnos[i].responsible_NOC, 
-                prioridade: turnos[i].priority, 
-                intermitência: turnos[i].intermittent, 
-                ilha_responsável: turnos[i].responsible_island, 
-                responsavel_acionado: turnos[i].responsible_triggered, 
-                hora_do_acionamento: turnos[i].activation_time, 
-                fora_do_expediente: turnos[i].out_of_office, 
+                shift: turnos[i].shift, 
+                date_and_time_ticket: turnos[i].date_and_time_ticket, 
+                num_ticket: turnos[i].num_ticket, 
+                requisition_type: turnos[i].requisition_type, 
+                responsible_NOC: turnos[i].responsible_NOC, 
+                priority: turnos[i].priority, 
+                intermittent: turnos[i].intermittent, 
+                responsible_island: turnos[i].responsible_island, 
+                responsible_triggered: turnos[i].responsible_triggered, 
+                activation_time: turnos[i].activation_time, 
+                out_of_office: turnos[i].out_of_office, 
                 status: turnos[i].status, 
-                email_de_Aviso: turnos[i].warning_email, 
-                tipo_de_aciosanamento: turnos[i].type_of_activation, 
-                observacao: turnos[i].note
+                warning_email: turnos[i].warning_email, 
+                type_of_activation: turnos[i].type_of_activation, 
+                note: turnos[i].note
              
             })
         }
@@ -37,7 +37,7 @@ module.exports = {
 
         let codigo = req.params.codigo;
  
-        let turno = await CarroService.buscarUm(codigo);
+        let turno = await DiaryService.buscarUm(codigo);
 
         if (turno) {
             json.result = turno;
@@ -66,7 +66,7 @@ module.exports = {
         let note  = req.body.note;
 
         if (shift) { // verifica se o turno foi preenchido, se se sim ele executa a query
-            await CarroService.inserir(shift, date_and_time_ticket, num_ticket, requisition_type, responsible_NOC, priority, intermittent, responsible_island, responsible_triggered, activation_time, out_of_office, status, warning_email, type_of_activation, note);
+            await DiaryService.inserir(shift, date_and_time_ticket, num_ticket, requisition_type, responsible_NOC, priority, intermittent, responsible_island, responsible_triggered, activation_time, out_of_office, status, warning_email, type_of_activation, note);
             json.result = {
                 shift, 
                 date_and_time_ticket, 
@@ -113,7 +113,7 @@ module.exports = {
 
         if (codigo) {
             
-            await CarroService.alterar(shift, date_and_time_ticket, num_ticket, requisition_type, responsible_NOC, priority, intermittent, responsible_island, responsible_triggered, activation_time, out_of_office, status, warning_email, type_of_activation, note, codigo);
+            await DiaryService.alterar(shift, date_and_time_ticket, num_ticket, requisition_type, responsible_NOC, priority, intermittent, responsible_island, responsible_triggered, activation_time, out_of_office, status, warning_email, type_of_activation, note, codigo);
             
             json.result = {
                 // codigo,
@@ -145,7 +145,7 @@ module.exports = {
     excluir: async (req, res) => {
         let json = {error:'', result:{}};
 
-        await CarroService.excluir(req.params.codigo);
+        await DiaryService.excluir(req.params.codigo);
 
         res.json(json);
 

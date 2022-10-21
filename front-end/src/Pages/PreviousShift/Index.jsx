@@ -9,7 +9,6 @@ import Container from "../../Components/Container/Index";
 import Button from "../../Components/Button/Index";
 
 function PreviousShift() {
-  //   const [diary, setDiary] = useState([]);
   const navigate = useNavigate();
 
   const {
@@ -19,7 +18,8 @@ function PreviousShift() {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    // console.log(data);
+    try {
+      // console.log(data);
     fetch("http://localhost:3001/api/diario-infra", {
       method: "POST",
       headers: {
@@ -33,6 +33,11 @@ function PreviousShift() {
           state: { message: "Turno criado com sucesso" },
         });
       });
+    } catch (error) {
+      console.log(error);  
+      console.log(errors);  
+    }
+    
   };
 
   return (

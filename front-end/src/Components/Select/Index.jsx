@@ -13,12 +13,12 @@ function Select({ label, options, name, control }) {
         // rules={{ required: true }}
         render={({ field }) => (
           <select {...field} className={style.select} name={name} id={label}>
-          <option disabled selected value="">
+          <option disabled selected>
             Escolha
           </option>
           {options.map((option) => {
             return (
-              <option key={option}  value={option.key}>
+              <option key={option} value={option.key}>
                 {option}
               </option>
             );

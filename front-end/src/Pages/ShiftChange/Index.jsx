@@ -89,6 +89,7 @@ function ShiftChange() {
             {database.length > 0 &&
             database.map((data) => (
                 <Card 
+                    // key={data.id}
                     // id={data.id} 
                     turno={data.shift}
                     dataEHora={data.date_and_time_ticket}
@@ -109,7 +110,6 @@ function ShiftChange() {
             ))}
 
             {database.length === 0  && <p>Não há itens para ser exibido</p>}
-
 
         </Container>
     );

@@ -33,7 +33,7 @@ function List({
     
 }) {
     return(
-        <div className={style.card}>
+        <div  className={style.card}>
             <table className={style.table}>
                 <tr>
                     <td className={style.tablecolumn}><span>Turno:</span> {turno}</td>

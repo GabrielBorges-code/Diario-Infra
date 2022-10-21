@@ -2,7 +2,7 @@ import style from "./style.module.css";
 
 import { Controller } from "react-hook-form";
 
-function Select({ label, options, name, control }) {
+export default function Select({ label, options, name, control }) {
   return (
     <>
       <label className={style.label} htmlFor={label}>{label}</label>
@@ -26,10 +26,6 @@ function Select({ label, options, name, control }) {
         </select>
         )}
       />
-
-
     </>
   );
 }
-
-export default Select;

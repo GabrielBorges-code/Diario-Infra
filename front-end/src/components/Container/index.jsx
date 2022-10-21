@@ -1,6 +1,6 @@
 import style from './style.module.css';
 
-function Container(props) {
+export default function Container(props) {
     return (    
         <div className={`${style.container} ${style[props.customClass]}`}>
             {props.children}
@@ -8,5 +8,3 @@ function Container(props) {
 
     );
 }
-
-export default Container;

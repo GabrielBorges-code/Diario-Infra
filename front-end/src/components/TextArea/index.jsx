@@ -2,7 +2,7 @@ import style from "./style.module.css";
 
 import { Controller } from "react-hook-form";
 
-function Input({ label, type, name, control }) {
+export default function TextArea({ label, type, name, control }) {
   return (
     <>
       <label className={style.label} htmlFor={label}>
@@ -11,30 +11,18 @@ function Input({ label, type, name, control }) {
       <Controller
         name={name}
         control={control}
-        // rules={{ required: true }}
+        rules={{ required: true }}
         render={({ field }) => (
-          <input
+          <textarea
             {...field}
             control={control}
-            className={style.input}
+            className={style.textarea}
             type={type}
-            // placeholder={label}
             name={name}
             id={label}
-          />
+          ></textarea>
         )}
       />
-
-      {/* <input
-        control={control}
-        className={style.input}
-        type={type}
-        placeholder={label}
-        name={name}
-        id={label}
-      /> */}
     </>
   );
 }
-
-export default Input;

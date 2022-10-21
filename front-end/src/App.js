@@ -1,11 +1,9 @@
-import Routers from "./Routers/Index";
-import Footer from "./Components/Footer/Index";
+import Routers from "./routers";
 
 function App() {
   return (
     <>
       <Routers />
-      <Footer/>
     </>
   );
 }

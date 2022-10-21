@@ -1,14 +1,14 @@
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router";
 
-import Input from "../../Components/Input/Index";
-import Select from "../../Components/Select/Index";
-import TextArea from "../../Components/TextArea/Index";
+import Input from "../../components/Input";
+import Select from "../../components/Select";
+import TextArea from "../../components/TextArea";
 
-import Container from "../../Components/Container/Index";
-import Button from "../../Components/Button/Index";
+import Container from "../../components/Container";
+import Button from "../../components/Button";
 
-function PreviousShift() {
+export default function PreviousShift() {
   const navigate = useNavigate();
 
   const {
@@ -20,24 +20,23 @@ function PreviousShift() {
   const onSubmit = (data) => {
     try {
       // console.log(data);
-    fetch("http://localhost:3001/api/diario-infra", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
-      .then((resp) => resp.json())
-      .then((data) => {
-        navigate("/turnos-anteriores", {
-          state: { message: "Turno criado com sucesso" },
+      fetch("http://localhost:3001/api/diario-infra", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      })
+        .then((resp) => resp.json())
+        .then((data) => {
+          navigate("/turnos-anteriores", {
+            state: { message: "Turno criado com sucesso" },
+          });
         });
-      });
     } catch (error) {
-      console.log(error);  
-      console.log(errors);  
+      console.log(error);
+      console.log(errors);
     }
-    
   };
 
   return (
@@ -165,5 +164,3 @@ function PreviousShift() {
     </Container>
   );
 }
-
-export default PreviousShift;

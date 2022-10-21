@@ -4,7 +4,7 @@ import Edit from "../../assets/icons/edit.png";
 import Delete from "../../assets/icons/delete.png";
 import View from "../../assets/icons/view.png";
 
-function List({
+export default function List({
   id,
   turno,
   dataEHora,
@@ -31,7 +31,7 @@ function List({
       <table className={style.table}>
         <tr>
           <td className={style.tablecolumn}>
-            <span>Turno:</span> {turno} -- {id}
+            <span>Turno:</span> {turno}
           </td>
           <td className={style.tablecolumn}>
             <span>Data e Hora:</span> {dataEHora}
@@ -73,5 +73,3 @@ function List({
     </div>
   );
 }
-
-export default List;

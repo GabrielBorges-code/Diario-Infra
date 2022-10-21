@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import icon from "../../assets/icons/monitoring.png";
 import styles from "./style.module.css";
 
-function Header() {
+export default function Header() {
   return (
     <header className={styles.heading}>
       <nav className={styles.navBar}>
@@ -26,5 +26,3 @@ function Header() {
     </header>
   );
 }
-
-export default Header;

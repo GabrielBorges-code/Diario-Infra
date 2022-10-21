@@ -1,25 +1,25 @@
-import PreviousShift from "../Pages/PreviousShift/Index";
-import ShiftChange from "../Pages/ShiftChange/Index";
-import MainPage from "../Pages/MainPage/Index";
-import Header from "../Components/Header/Index";
+import PreviousShift from "../pages/PreviousShift";
+import ShiftChange from "../pages/ShiftChange";
+import MainPage from "../pages/MainPage";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-function Routers() {
+export default function Routers() {
   return (
     <>
       <BrowserRouter>
-        
-        <Header/>
+        <Header />
 
         <Routes>
           <Route exact path="/" element={<MainPage />} />
           <Route path="/passagem-de-turno" element={<PreviousShift />} />
           <Route path="/turnos-anteriores" element={<ShiftChange />} />
         </Routes>
+
+        <Footer />
       </BrowserRouter>
     </>
   );
 }
-
-export default Routers;

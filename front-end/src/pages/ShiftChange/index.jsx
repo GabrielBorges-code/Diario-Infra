@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
 
-import Container from "../../Components/Container/Index";
-import Card from "../../Components/Card/Index";
+import Container from "../../components/Container";
+import Card from "../../components/Card";
 
-function ShiftChange() {
-
+export default function ShiftChange() {
   const [database, setDatabase] = useState([]);
 
   useEffect(() => {
@@ -40,7 +39,6 @@ function ShiftChange() {
               nChamado={data.num_ticket}
               tipoRequisicao={data.requisition_type}
               prioridade={data.priority}
-              
             />
           ))}
 
@@ -48,5 +46,3 @@ function ShiftChange() {
     </Container>
   );
 }
-
-export default ShiftChange;

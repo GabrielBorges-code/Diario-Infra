@@ -3,6 +3,7 @@ import style from "./style.module.css";
 import Edit from "../../assets/icons/edit.png";
 import Delete from "../../assets/icons/delete.png";
 import View from "../../assets/icons/view.png";
+import { useNavigate } from "react-router";
 
 function List({
   id,
@@ -13,17 +14,27 @@ function List({
   nocResponsavel,
   prioridade,
 }) {
+  const navigate = useNavigate();
+
+  const handleNavigateToPage = (id) => {
+    // alert(id)
+    navigate(`/chamado-detalhado/${id}`);
+  };
 
   const handleDeleteShift = (id) => {
-    console.log(id);
-    fetch(`http://localhost:3001/api/diario-infra/${id}`, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((resp) => resp.json())
-      .catch((err) => console.log(err));
+    // console.log(id);
+    const deleteConfirm = window.confirm("Você tem certeza que deseja apagar?");
+
+    if (deleteConfirm) {
+      fetch(`http://localhost:3001/api/diario-infra/${id}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+        .then((resp) => resp.json())
+        .catch((err) => console.log(err));
+    }
   };
 
   return (
@@ -42,7 +53,12 @@ function List({
 
           <td className={style.tableicon} rowSpan="4">
             <p>
-              <img className={style.img} src={View} alt="imagem visualizar" />
+              <img
+                className={style.img}
+                src={View}
+                alt="imagem visualizar"
+                onClick={() => handleNavigateToPage(id)}
+              />
             </p>
             <p className={style.iconsbottom}>
               <img className={style.img} src={Edit} alt="imagem editar" />

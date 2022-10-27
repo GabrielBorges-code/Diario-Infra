@@ -10,15 +10,14 @@ export default function Select({ label, options, name, control }) {
       <Controller
         name={name}
         control={control}
-        // rules={{ required: true }}
         render={({ field }) => (
           <select {...field} className={style.select} name={name} id={label}>
-          <option disabled selected>
+          <option disabled>
             Escolha
           </option>
           {options.map((option) => {
             return (
-              <option key={option} value={option.key}>
+              <option key={option} defaultValue={option.key}>
                 {option}
               </option>
             );

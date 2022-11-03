@@ -2,7 +2,7 @@ import style from "./style.module.css";
 
 import { Controller } from "react-hook-form";
 
-export default function Input({ label, type, name, control }) {
+export default function Input({ label, type, name, control, value, onChange }) {
   return (
     <>
       <label className={style.label} htmlFor={label}>
@@ -19,6 +19,8 @@ export default function Input({ label, type, name, control }) {
             className={style.input}
             type={type}
             // placeholder={label}
+            // value={value}
+            // onChange={onChange}
             name={name}
             id={label}
           />

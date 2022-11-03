@@ -1,17 +1,20 @@
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router";
+import { useNavigate, useParams } from "react-router-dom";
 
 import style from "./styles.module.css";
 
+import Button from "../../components/Button";
+import Container from "../../components/Container";
 import Input from "../../components/Input";
 import Select from "../../components/Select";
 import TextArea from "../../components/TextArea";
+import { useEffect, useState } from "react";
 
-import Container from "../../components/Container";
-import Button from "../../components/Button";
-
-export default function PreviousShift() {
+export default function EditShiftChange() {
+  const [database, setDatabase] = useState([]);
   const navigate = useNavigate();
+
+  const { id } = useParams();
 
   const {
     control,
@@ -19,32 +22,48 @@ export default function PreviousShift() {
     // watch,
     formState: { errors },
   } = useForm();
-  
-  const onSubmit = (data) => {
-    try {
-      // console.log(data);
-      fetch("http://localhost:3001/api/diario-infra", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
+
+  useEffect(() => {
+    fetch(`http://localhost:3001/api/diario-infra/${id}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((resp) => resp.json())
+      .then((data) => {
+        setDatabase(data.result);
       })
-        .then((resp) => resp.json())
-        .then((data) => {
-          navigate("/turnos-anteriores", {
-            state: { message: "Turno criado com sucesso" },
-          });
-        });
-    } catch (error) {
-      console.log(error);
-      console.log(errors);
-    }
+      .catch((err) => console.log(err));
+  }, [id]);
+
+  console.log(database);
+
+  const onSubmit = (data) => {
+    // try {
+    //   // console.log(data);
+    //   fetch("http://localhost:3001/api/diario-infra", {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify(data),
+    //   })
+    //     .then((resp) => resp.json())
+    //     .then((data) => {
+    //       navigate("/turnos-anteriores", {
+    //         state: { message: "Turno criado com sucesso" },
+    //       });
+    //     });
+    // } catch (error) {
+    //   console.log(error);
+    //   console.log(errors);
+    // }
   };
 
   return (
     <Container>
-      <h1>Passagem de Turno</h1>
+      <h1>Pagina de edição {id}</h1>
 
       <br />
 
@@ -68,6 +87,8 @@ export default function PreviousShift() {
           type="number"
           name="num_ticket"
           control={control}
+          // value={database.num_ticket}
+          // onChange={handleChange}
         />
 
         <Select
@@ -157,7 +178,10 @@ export default function PreviousShift() {
         <TextArea label="Observação" control={control} name="note" />
 
         <div className={style.inline}>
-          <Button text="Enviar" type="submit" />
+          <Button 
+            text="Atualizar" 
+            type="submit" 
+          />
 
         </div>
       </form>

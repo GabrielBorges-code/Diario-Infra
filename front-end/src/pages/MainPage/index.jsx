@@ -8,10 +8,7 @@ export default function MainPage() {
       <br />
 
       <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae
-        accusantium eveniet corporis? In hic aliquam odit. Facilis sed natus
-        quas itaque assumenda voluptas voluptatem, ipsa autem. Dicta, quam
-        quaerat? Illum?
+        aqui pode ficar o detalhamento
       </p>
     </Container>
   );

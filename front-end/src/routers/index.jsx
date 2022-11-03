@@ -1,6 +1,9 @@
 import PreviousShift from "../pages/PreviousShift";
 import ShiftChange from "../pages/ShiftChange";
+import DetailedShift from "../pages/DetailedShift"
 import MainPage from "../pages/MainPage";
+import EditShiftChange from "../pages/EditShiftChange";
+
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
@@ -14,8 +17,10 @@ export default function Routers() {
 
         <Routes>
           <Route exact path="/" element={<MainPage />} />
-          <Route path="/passagem-de-turno" element={<PreviousShift />} />
-          <Route path="/turnos-anteriores" element={<ShiftChange />} />
+          <Route path="/chamado-detalhado/:id" element={<DetailedShift />} />
+          <Route path="/editar-chamado/:id" element={<EditShiftChange />} />
+          <Route path="/passagem-de-turno" element={<ShiftChange/>} />
+          <Route path="/turnos-anteriores" element={<PreviousShift />} />
         </Routes>
 
         <Footer />

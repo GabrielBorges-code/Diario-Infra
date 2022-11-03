@@ -33,6 +33,7 @@ export default function ShiftChange() {
           .reverse()
           .map((data) => (
             <Card
+              key={data.id}
               id={data.id}
               turno={data.shift}
               dataEHora={data.date_and_time_ticket}

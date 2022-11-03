@@ -13,11 +13,6 @@ export default function DetailsShift() {
 
   const { id } = useParams();
 
-  const handleDeleteShift = (id) => {
-    // window.alert(id)
-    navigate("/")
-  }
-
   useEffect(() => {
     fetch(`http://localhost:3001/api/diario-infra/${id}`, {
       method: "GET",
@@ -31,6 +26,34 @@ export default function DetailsShift() {
       })
       .catch((err) => console.log(err));
   }, [id]);
+
+  
+  const handleDeleteShift = (id) => {
+    // window.alert(`teste ${id}`);
+
+    const deleteConfirm = window.confirm("Você tem certeza que deseja apagar?");
+
+    if (deleteConfirm) {
+      fetch(`http://localhost:3001/api/diario-infra/${id}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+        .then((resp) => resp.json())
+        .then((data) => {
+          navigate("/turnos-anteriores", {
+            state: { message: "Turno apagado com sucesso" },
+          });
+        })
+        .catch((err) => console.log(err));
+    }
+  };
+
+  const handleNavigateToEditPage = (id) => {
+    // window.alert(id)
+    navigate(`/editar-chamado/${id}`)
+  }
 
   return (
     <Container>
@@ -58,12 +81,18 @@ export default function DetailsShift() {
       />
 
       <div className={styles.inline}>
-        <Button text="Editar" type="button" />
         <Button 
-          onClick={() => handleDeleteShift(id)} 
+          text="Editar" 
+          type="button" 
+          onClick={() => handleNavigateToEditPage(id)}
+        />
+        <Button 
           text="Excluir" 
+          type="button"
+          onClick={() => handleDeleteShift(id)}
         />
       </div>
+      
     </Container>
   );
 }

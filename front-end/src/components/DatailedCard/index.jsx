@@ -1,69 +1,92 @@
-import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router";
-// import { useParams } from "react-router";
-import Container from "../../components/Container";
-import DatailedCard from "../../components/DatailedCard";
+import style from "./style.module.css";
 
-import styles from "./style.module.css";
-import Button from "../../components/Button";
+export default function DaitailedShift({
+  // id,
+  shift,
+  date_and_time_ticket,
+  num_ticket,
+  requisition_type,
+  responsible_NOC,
+  priority,
+  intermittent,
+  responsible_island,
+  responsible_triggered,
+  activation_time,
+  out_of_office,
+  status,
+  warning_email,
+  type_of_activation,
+  note
+}) {
 
-export default function DetailsShift() {
-  const [database, setDatabase] = useState([]);
-  const navigate = useNavigate();
-
-  const { id } = useParams();
-
-  const handleDeleteShift = (id) => {
-    window.alert(id)
-    navigate("/")
-  }
-
-  useEffect(() => {
-    fetch(`http://localhost:3001/api/diario-infra/${id}`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((resp) => resp.json())
-      .then((data) => {
-        setDatabase(data.result);
-      })
-      .catch((err) => console.log(err));
-  }, [id]);
 
   return (
-    <Container>
-      <h1>
-        {database.requisition_type} {database.num_ticket}
-      </h1>
+    <div className={style.card}>
+      <table className={style.table}>
+        <tbody>
+          <tr>
+            <td className={style.tablecolumn}>
+              <span>Turno:</span> {shift}
+            </td>
+            <td className={style.tablecolumn}>
+              <span>Data e Hora:</span> {date_and_time_ticket}
+            </td>
+            <td className={style.tablecolumn}>
+              <span>NOC Responsável:</span> {responsible_NOC}
+            </td>
+          </tr>
 
-      <DatailedCard
-        id={database.id}
-        shift={database.shift}
-        date_and_time_ticket={database.date_and_time_ticket}
-        num_ticket={database.num_ticket}
-        requisition_type={database.requisition_type}
-        responsible_NOC={database.responsible_NOC}
-        priority={database.priority}
-        intermittent={database.intermittent}
-        responsible_island={database.responsible_island}
-        responsible_triggered={database.responsible_triggered}
-        activation_time={database.activation_time}
-        out_of_office={database.out_of_office}
-        status={database.status}
-        warning_email={database.warning_email}
-        type_of_activation={database.type_of_activation}
-        note={database.note}
-      />
+          <tr>
+            <td className={style.tablecolumn}>
+              <span>Nº do Chamado:</span> {num_ticket}
+            </td>
+            <td className={style.tablecolumn}>
+              <span>Tipo de Requisição:</span> {requisition_type}
+            </td>
+            <td className={style.tablecolumn}>
+              <span>Prioridade:</span> {priority}
+            </td>
+          </tr>
 
-      <div className={styles.inline}>
-        <Button text="Editar" type="button" />
-        <Button 
-          onClick={() => handleDeleteShift(id)} 
-          text="Excluir" 
-        />
-      </div>
-    </Container>
+          <tr>
+            <td className={style.tablecolumn}>
+              <span>Houve Intermitência:</span> {intermittent}
+            </td>
+            <td className={style.tablecolumn}>
+              <span>Ilha Responsável:</span> {responsible_island}
+            </td>
+            <td className={style.tablecolumn}>
+              <span>Responsável Acionado:</span> {responsible_triggered}
+            </td>
+          </tr>
+
+          <tr>
+            <td className={style.tablecolumn}>
+              <span>Hora do Acionamento:</span> {activation_time}
+            </td>
+            <td className={style.tablecolumn}>
+              <span>Fora do Expediente:</span> {out_of_office}
+            </td>
+            <td className={style.tablecolumn}>
+              <span>Status do Chamado:</span> {status}
+            </td>
+          </tr>
+          <tr>
+            <td className={style.tablecolumn}>
+              <span>Email de Aivo:</span> {warning_email}
+            </td>
+            <td className={style.tablecolumn}>
+              <span>Tipo de Acionamento:</span> {type_of_activation}
+            </td>
+            
+          </tr>
+          <tr>
+            <td colSpan="4" className={style.tablecolumn}>
+              <span>Obvervação:</span> {note}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   );
 }

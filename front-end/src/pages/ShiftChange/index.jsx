@@ -46,8 +46,6 @@ export default function PreviousShift() {
     <Container>
       <h1>Passagem de Turno</h1>
 
-      <br />
-
       <form onSubmit={handleSubmit(onSubmit)}>
         <Select
           label="Turno"
@@ -161,12 +159,6 @@ export default function PreviousShift() {
 
         </div>
       </form>
-
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
     </Container>
   );
 }

@@ -17,10 +17,10 @@ export default function Routers() {
 
         <Routes>
           <Route exact path="/" element={<MainPage />} />
-          <Route path="/chamado-detalhado/:id" element={<DetailedShift />} />
-          <Route path="/editar-chamado/:id" element={<EditShiftChange />} />
-          <Route path="/passagem-de-turno" element={<ShiftChange/>} />
-          <Route path="/turnos-anteriores" element={<PreviousShift />} />
+          <Route path="/chamado-detalhado/:id" element={<DetailedShift/>}/>
+          <Route path="/editar-chamado/:id" element={<EditShiftChange/>}/>
+          <Route path="/registro-de-chamados" element={<ShiftChange/>}/>
+          <Route path="/chamados-anteriores" element={<PreviousShift/>}/>
         </Routes>
 
         <Footer />

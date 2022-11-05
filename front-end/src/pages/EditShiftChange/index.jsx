@@ -65,8 +65,6 @@ export default function EditShiftChange() {
     <Container>
       <h1>Pagina de edição {id}</h1>
 
-      <br />
-
       <form onSubmit={handleSubmit(onSubmit)}>
         <Select
           label="Turno"
@@ -185,12 +183,6 @@ export default function EditShiftChange() {
 
         </div>
       </form>
-
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
     </Container>
   );
 }

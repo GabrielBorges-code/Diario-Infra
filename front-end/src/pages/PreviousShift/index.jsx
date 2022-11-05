@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 
 import Container from "../../components/Container";
 import Card from "../../components/Card";
-// import { useParams } from "react-router";
 
 export default function ShiftChange() {
   const [database, setDatabase] = useState([]);
@@ -45,6 +44,7 @@ export default function ShiftChange() {
           ))}
 
       {database.length === 0 && <p>Não há itens para ser exibido</p>}
+   
     </Container>
   );
 }

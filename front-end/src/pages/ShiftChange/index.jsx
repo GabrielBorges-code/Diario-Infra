@@ -32,7 +32,7 @@ export default function PreviousShift() {
       })
         .then((resp) => resp.json())
         .then((data) => {
-          navigate("/turnos-anteriores", {
+          navigate("/chamados-anteriores", {
             state: { message: "Turno criado com sucesso" },
           });
         });
@@ -56,16 +56,19 @@ export default function PreviousShift() {
 
         <Input
           label="Data e Hora do CA"
-          type="datetime-local"
+          // type="datetime-local"
+          mask="00/00/0000 00:00"
+          placeholder="dd/mm/aaaa hh:mm"
           name="date_and_time_ticket"
           control={control}
         />
 
         <Input
           label="Número do Chamado"
-          type="number"
+          // type="number"
           name="num_ticket"
           control={control}
+          mask="000000"
         />
 
         <Select
@@ -87,9 +90,16 @@ export default function PreviousShift() {
           control={control}
         />
 
-        <Input
+        {/* <Input
           label="Prioridade"
-          type="text"
+          // type="text"
+          name="priority"
+          control={control}
+        /> */}
+
+        <Select
+          label="Prioridade"
+          options={["1 - Alta", "2 - Média", "3 - Baixa"]}
           name="priority"
           control={control}
         />
@@ -104,7 +114,7 @@ export default function PreviousShift() {
         <Select
           label="Ilha responsável"
           options={[
-            "Ilha Windos",
+            "Ilha Windows",
             "Ilha Linux",
             "Ilha Redes",
             "Ilha Banco de Dados",
@@ -118,14 +128,16 @@ export default function PreviousShift() {
 
         <Input
           label="Responsável Acionado"
-          type="text"
+          // type="text"
           name="responsible_triggered"
           control={control}
         />
 
         <Input
           label="Hora do acionamento"
-          type="time"
+          // type="time"
+          mask="00:00"
+          placeholder="hh:mm"
           name="activation_time"
           control={control}
         />
@@ -136,18 +148,30 @@ export default function PreviousShift() {
           control={control}
         />
 
-        <Input label="Status" type="text" name="status" control={control} />
+        {/* <Input 
+          label="Status" 
+          // type="text" 
+          name="status" 
+          control={control} 
+        /> */}
+
+        <Select
+          label="Status"
+          options={["Aberto", "Designado", "Atendido", "Fechado"]}
+          name="status"
+          control={control}
+        />
 
         <Select
           label="E-mail de Aviso"
-          options={["Sim", "Não"]}
+          options={["Sim", "Não", "Não foi necessário"]}
           name="warning_email"
           control={control}
         />
 
         <Input
           label="Tipo de acionamento"
-          type="text"
+          // type="text"
           name="type_of_activation"
           control={control}
         />

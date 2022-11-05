@@ -12,3 +12,7 @@
     font-size: 1.75em;
     color: var(--white);
 }
+
+.input::placeholder {
+    color: var(--white);
+}

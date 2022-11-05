@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import style from "./styles.module.css";
 
@@ -12,7 +12,7 @@ import { useEffect, useState } from "react";
 
 export default function EditShiftChange() {
   const [database, setDatabase] = useState([]);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const { id } = useParams();
 
@@ -22,6 +22,8 @@ export default function EditShiftChange() {
     // watch,
     formState: { errors },
   } = useForm();
+
+  console.log(errors)
 
   useEffect(() => {
     fetch(`http://localhost:3001/api/diario-infra/${id}`, {

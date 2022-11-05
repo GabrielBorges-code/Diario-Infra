@@ -1,8 +1,10 @@
-import style from "./style.module.css";
+import {IMaskInput} from "react-imask";
 
 import { Controller } from "react-hook-form";
 
-export default function Input({ label, type, name, control, value, onChange }) {
+import style from "./style.module.css";
+
+export default function Input({ label, name, control, mask, placeholder, type, value, onChange }) {
   return (
     <>
       <label className={style.label} htmlFor={label}>
@@ -13,16 +15,19 @@ export default function Input({ label, type, name, control, value, onChange }) {
         control={control}
         // rules={{ required: true }}
         render={({ field }) => (
-          <input
+          <IMaskInput
             {...field}
             control={control}
             className={style.input}
-            type={type}
+            unmask={true} 
+            mask={mask}
+            placeholder={placeholder}
+            name={name}
+            id={label}
+            // type={type}
             // placeholder={label}
             // value={value}
             // onChange={onChange}
-            name={name}
-            id={label}
           />
         )}
       />

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
-// import { useParams } from "react-router";
+
 import Container from "../../components/Container";
 import DatailedCard from "../../components/DatailedCard";
+import Button from "../../components/Button";
 
 import styles from "./styles.module.css";
-import Button from "../../components/Button";
 
 export default function DetailsShift() {
   const [database, setDatabase] = useState([]);
@@ -29,8 +29,6 @@ export default function DetailsShift() {
 
   
   const handleDeleteShift = (id) => {
-    // window.alert(`teste ${id}`);
-
     const deleteConfirm = window.confirm("Você tem certeza que deseja apagar?");
 
     if (deleteConfirm) {
@@ -42,7 +40,7 @@ export default function DetailsShift() {
       })
         .then((resp) => resp.json())
         .then((data) => {
-          navigate("/turnos-anteriores", {
+          navigate("/chamados-anteriores", {
             state: { message: "Turno apagado com sucesso" },
           });
         })
@@ -51,7 +49,6 @@ export default function DetailsShift() {
   };
 
   const handleNavigateToEditPage = (id) => {
-    // window.alert(id)
     navigate(`/editar-chamado/${id}`)
   }
 
@@ -77,8 +74,9 @@ export default function DetailsShift() {
         status={database.status}
         warning_email={database.warning_email}
         type_of_activation={database.type_of_activation}
-        note={database.note}
-      />
+        note={database.note}  
+      /> 
+  
 
       <div className={styles.inline}>
         <Button 

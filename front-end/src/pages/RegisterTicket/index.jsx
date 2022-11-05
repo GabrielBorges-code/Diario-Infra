@@ -1,20 +1,18 @@
 import { useForm } from "react-hook-form";
-import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router";
 
 import style from "./styles.module.css";
 
-import Button from "../../components/Button";
-import Container from "../../components/Container";
 import Input from "../../components/Input";
 import Select from "../../components/Select";
 import TextArea from "../../components/TextArea";
-import { useEffect, useState } from "react";
 
-export default function EditShiftChange() {
-  const [database, setDatabase] = useState([]);
-  // const navigate = useNavigate();
+import Container from "../../components/Container";
+import Button from "../../components/Button";
 
-  const { id } = useParams();
+export default function RegisterTicket() {
+  
+  const navigate = useNavigate();
 
   const {
     control,
@@ -22,50 +20,32 @@ export default function EditShiftChange() {
     // watch,
     formState: { errors },
   } = useForm();
-
-  console.log(errors)
-
-  useEffect(() => {
-    fetch(`http://localhost:3001/api/diario-infra/${id}`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((resp) => resp.json())
-      .then((data) => {
-        setDatabase(data.result);
-      })
-      .catch((err) => console.log(err));
-  }, [id]);
-
-  console.log(database);
-
+  
   const onSubmit = (data) => {
-    // try {
-    //   // console.log(data);
-    //   fetch("http://localhost:3001/api/diario-infra", {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify(data),
-    //   })
-    //     .then((resp) => resp.json())
-    //     .then((data) => {
-    //       navigate("/turnos-anteriores", {
-    //         state: { message: "Turno criado com sucesso" },
-    //       });
-    //     });
-    // } catch (error) {
-    //   console.log(error);
-    //   console.log(errors);
-    // }
+    try {
+      // console.log(data);
+      fetch("http://localhost:3001/api/diario-infra", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      })
+        .then((resp) => resp.json())
+        .then((data) => {
+          navigate("/chamados-anteriores", {
+            state: { message: "Turno criado com sucesso" },
+          });
+        });
+    } catch (error) {
+      console.log(error);
+      console.log(errors);
+    }
   };
 
   return (
     <Container>
-      <h1>Pagina de edição {id}</h1>
+      <h1>Passagem de Turno</h1>
 
       <form onSubmit={handleSubmit(onSubmit)}>
         <Select
@@ -77,18 +57,19 @@ export default function EditShiftChange() {
 
         <Input
           label="Data e Hora do CA"
-          type="datetime-local"
+          // type="datetime-local"
+          mask="00/00/0000 00:00"
+          placeholder="dd/mm/aaaa hh:mm"
           name="date_and_time_ticket"
           control={control}
         />
 
         <Input
           label="Número do Chamado"
-          type="number"
+          // type="number"
           name="num_ticket"
           control={control}
-          // value={database.num_ticket}
-          // onChange={handleChange}
+          mask="000000"
         />
 
         <Select
@@ -110,9 +91,16 @@ export default function EditShiftChange() {
           control={control}
         />
 
-        <Input
+        {/* <Input
           label="Prioridade"
-          type="text"
+          // type="text"
+          name="priority"
+          control={control}
+        /> */}
+
+        <Select
+          label="Prioridade"
+          options={["1 - Alta", "2 - Média", "3 - Baixa"]}
           name="priority"
           control={control}
         />
@@ -127,7 +115,7 @@ export default function EditShiftChange() {
         <Select
           label="Ilha responsável"
           options={[
-            "Ilha Windos",
+            "Ilha Windows",
             "Ilha Linux",
             "Ilha Redes",
             "Ilha Banco de Dados",
@@ -141,14 +129,16 @@ export default function EditShiftChange() {
 
         <Input
           label="Responsável Acionado"
-          type="text"
+          // type="text"
           name="responsible_triggered"
           control={control}
         />
 
         <Input
           label="Hora do acionamento"
-          type="time"
+          // type="time"
+          mask="00:00"
+          placeholder="hh:mm"
           name="activation_time"
           control={control}
         />
@@ -159,18 +149,30 @@ export default function EditShiftChange() {
           control={control}
         />
 
-        <Input label="Status" type="text" name="status" control={control} />
+        {/* <Input 
+          label="Status" 
+          // type="text" 
+          name="status" 
+          control={control} 
+        /> */}
+
+        <Select
+          label="Status"
+          options={["Aberto", "Designado", "Atendido", "Fechado"]}
+          name="status"
+          control={control}
+        />
 
         <Select
           label="E-mail de Aviso"
-          options={["Sim", "Não"]}
+          options={["Sim", "Não", "Não foi necessário"]}
           name="warning_email"
           control={control}
         />
 
         <Input
           label="Tipo de acionamento"
-          type="text"
+          // type="text"
           name="type_of_activation"
           control={control}
         />
@@ -178,10 +180,7 @@ export default function EditShiftChange() {
         <TextArea label="Observação" control={control} name="note" />
 
         <div className={style.inline}>
-          <Button 
-            text="Atualizar" 
-            type="submit" 
-          />
+          <Button text="Enviar" type="submit" />
 
         </div>
       </form>

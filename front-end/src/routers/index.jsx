@@ -1,8 +1,8 @@
-import PreviousShift from "../pages/PreviousShift";
-import ShiftChange from "../pages/ShiftChange";
-import DetailedShift from "../pages/DetailedShift"
+import PreviousTicket from "../pages/PreviousTicket";
+import RegisterTicket from "../pages/RegisterTicket";
+import DetailedTicket from "../pages/DetailedTicket"
 import MainPage from "../pages/MainPage";
-import EditShiftChange from "../pages/EditShiftChange";
+import EditTicket from "../pages/EditTicket";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -17,10 +17,10 @@ export default function Routers() {
 
         <Routes>
           <Route exact path="/" element={<MainPage />} />
-          <Route path="/chamado-detalhado/:id" element={<DetailedShift/>}/>
-          <Route path="/editar-chamado/:id" element={<EditShiftChange/>}/>
-          <Route path="/registro-de-chamados" element={<ShiftChange/>}/>
-          <Route path="/chamados-anteriores" element={<PreviousShift/>}/>
+          <Route path="/chamado-detalhado/:id" element={<DetailedTicket/>}/>
+          <Route path="/editar-chamado/:id" element={<EditTicket/>}/>
+          <Route path="/registro-de-chamados" element={<RegisterTicket/>}/>
+          <Route path="/chamados-anteriores" element={<PreviousTicket/>}/>
         </Routes>
 
         <Footer />

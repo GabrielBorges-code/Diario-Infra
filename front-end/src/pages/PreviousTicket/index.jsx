@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import Container from "../../components/Container";
 import Card from "../../components/Card";
 
-export default function ShiftChange() {
+export default function PreviousTicket() {
   const [database, setDatabase] = useState([]);
 
   useEffect(() => {

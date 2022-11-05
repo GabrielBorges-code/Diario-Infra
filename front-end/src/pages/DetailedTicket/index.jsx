@@ -7,7 +7,7 @@ import Button from "../../components/Button";
 
 import styles from "./styles.module.css";
 
-export default function DetailsShift() {
+export default function DetailsTicket() {
   const [database, setDatabase] = useState([]);
   const navigate = useNavigate();
 

@@ -1,4 +1,5 @@
-require("dotenv").config({ path: "variaveis.env" });
+// require("dotenv").config({ path: "variaveis.env" });
+require("dotenv").config({ path: " databaseConnection.env" });
 
 const express = require("express");
 const cors = require("cors");

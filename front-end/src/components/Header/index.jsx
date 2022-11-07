@@ -10,8 +10,11 @@ export default function Header() {
         <Link to="/"><img src={icon} alt="img monitoring" /></Link>
 
         <ul className={styles.list}>
-            <li className={styles.item}>
+            {/* <li className={styles.item}>
                 <Link to="/">Home</Link>
+            </li> */}
+            <li className={styles.item}>
+                <Link to="/">Turnos Anteriores</Link>
             </li>
             <li className={styles.item}>
                 <Link to="/registro-de-chamados">Registro de Chamados</Link>

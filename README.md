@@ -1,6 +1,6 @@
 # Diario Infra NOC
 
-O objetivo desse repositório é criar um CRUD para realizar as passagens de turno do time do NOC.
+O objetivo desse projeto é facilitar a passagem de turno entre os integrantes da equipe do NOC.
 
 ## Tecnologias
 

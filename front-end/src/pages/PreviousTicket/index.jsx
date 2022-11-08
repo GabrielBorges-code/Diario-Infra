@@ -20,8 +20,6 @@ export default function PreviousTicket() {
       .catch((err) => console.log(err));
   }, [database]);
 
-  // console.log(database);
-
   return (
     <Container>
       <h1>Chamados Anteriores</h1>

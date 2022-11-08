@@ -1,3 +1,4 @@
+// import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
 
@@ -8,10 +9,9 @@ import Container from "../../components/Container";
 import Input from "../../components/Input";
 import Select from "../../components/Select";
 import TextArea from "../../components/TextArea";
-import { useEffect, useState } from "react";
 
 export default function EditTicket() {
-  const [database, setDatabase] = useState([]);
+  // const [database, setDatabase] = useState([]);
   // const navigate = useNavigate();
 
   const { id } = useParams();
@@ -25,25 +25,22 @@ export default function EditTicket() {
 
   console.log(errors)
 
-  useEffect(() => {
-    fetch(`http://localhost:3001/api/diario-infra/${id}`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((resp) => resp.json())
-      .then((data) => {
-        setDatabase(data.result);
-      })
-      .catch((err) => console.log(err));
-  }, [id]);
-
-  console.log(database);
+  // useEffect(() => {
+  //   fetch(`http://localhost:3001/api/diario-infra/${id}`, {
+  //     method: "GET",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //   })
+  //     .then((resp) => resp.json())
+  //     .then((data) => {
+  //       setDatabase(data.result);
+  //     })
+  //     .catch((err) => console.log(err));
+  // }, [id]);
 
   const onSubmit = (data) => {
     // try {
-    //   // console.log(data);
     //   fetch("http://localhost:3001/api/diario-infra", {
     //     method: "POST",
     //     headers: {

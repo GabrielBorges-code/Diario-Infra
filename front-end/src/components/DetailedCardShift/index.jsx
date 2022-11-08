@@ -1,124 +1,67 @@
-// import { useNavigate } from "react-router";
+import React from 'react';
 
-import styles from "./styles.module.css";
+import styles from './styles.module.css';
 
-import Edit from "../../assets/icons/edit.png";
-import Delete from "../../assets/icons/delete.png";
-import View from "../../assets/icons/view.png";
-// import Container from "../Container";
-
-export default function DetailedCardShift({
-  id,
-  note,
+function DetailedCardShift({ 
+  date_and_time_shift,
   shift,
   responsible_NOC,
-  date_and_time_shift,
   activy_1,
   activy_2,
   activy_3,
   activy_4,
   activy_5,
+  note
 }) {
-  // const navigate = useNavigate();
-
-  // const handleNavigateToPage = (id) => {
-  //   // alert(id)
-  //   navigate(`/chamado-detalhado/${id}`);
-  // };
-
-  // const handleDeleteShift = (id) => {
-  //   const deleteConfirm = window.confirm("Você tem certeza que deseja apagar?");
-
-  //   if (deleteConfirm) {
-  //     fetch(`http://localhost:3001/api/passagem-de-turno/${id}`, {
-  //       method: "DELETE",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //     })
-  //       .then((resp) => resp.json())
-  //       .catch((err) => console.log(err));
-  //   }
-  // };
-
-  // const handleNavigateToEditPage = (id) => {
-  //   navigate(`/editar-chamado/${id}`);
-  // };
-
   return (
     <div className={styles.card}>
-      <table className={styles.table}>
-        <tbody>
-          <tr>
-            <td className={styles.tablecolumn}>
-              <span>Data:</span> {date_and_time_shift}
-            </td>
-            <td className={styles.tablecolumn}>
-              <span>Turno:</span> {shift}
-            </td>
-            <td className={styles.tablecolumn}>
-              <span>NOC Responsável:</span> {responsible_NOC}
-            </td>
-            <td className={styles.tableicon} rowSpan="3">
-              <p>
-                <img
-                  className={styles.img}
-                  src={View}
-                  alt="imagem visualizar"
-                  // onClick={() => handleNavigateToPage(id)}
-                />
-              </p>
-              <p className={styles.iconsbottom}>
-                <img 
-                  className={styles.img}  
-                  src={Edit} 
-                  alt="imagem editar" 
-                  // onClick={() => handleNavigateToEditPage(id)}
-                />
-              </p>
-              <p className={styles.iconsbottom}>
-                <img
-                  className={styles.img}
-                  src={Delete}
-                  alt="imagem excluir"
-                  // onClick={() => handleDeleteShift(id)}
-                />
-              </p>
-            </td>
-          </tr>
+    <table className={styles.table}>
+      <tbody>
+        <tr>
+          <td className={styles.tablecolumn}>
+            <span>Turno:</span> {shift}
+          </td>
+          <td className={styles.tablecolumn}>
+            <span>Data e Hora:</span> {date_and_time_shift}
+          </td>
+          <td className={styles.tablecolumn}>
+            <span>NOC Responsável:</span> {responsible_NOC}
+          </td>
+        </tr>
 
-          <tr>
-            
-            <td className={styles.tablecolumn}>
-              <span>Ronda na Sala Core:</span> {activy_1}
-            </td>
-            <td className={styles.tablecolumn}>
-              <span>Preencher o documento:</span> {activy_2}
-            </td>
-            <td className={styles.tablecolumn}>
-              <span>Triagem de chamados:</span> {activy_3}
-            </td>
+        <tr>
+          <td className={styles.tablecolumn}>
+            <span>Nº do Chamado:</span> {activy_1}
+          </td>
+          <td className={styles.tablecolumn}>
+            <span>Tipo de Requisição:</span> {activy_2}
+          </td>
+          <td className={styles.tablecolumn}>
+            <span>Prioridade:</span> {activy_3}
+          </td>
+        </tr>
 
-     
-          </tr>
+        <tr>
+          <td className={styles.tablecolumn}>
+            <span>Houve Intermitência:</span> {activy_4}
+          </td>
+          <td className={styles.tablecolumn}>
+            <span>Ilha Responsável:</span> {activy_5}
+          </td>
+          <td className={styles.tablecolumn}>
+            <span>Responsável Acionado:</span> 
+          </td>
+        </tr>
 
-          <tr>
-            <td className={styles.tablecolumn}>
-              <span>Verificar inicidentes:</span> {activy_4}
-            </td>
-            <td className={styles.tablecolumn}>
-              <span>Atualizar Links Embratel:</span> {activy_5}
-            </td>
-           
-          </tr>
-
-          {/* <tr>
-            <td colSpan="4" className={styles.tablecolumn}>
-              <span>Obvervação:</span> {note}
-            </td>
-          </tr> */}
-        </tbody>
-      </table>
-    </div>
+        <tr>
+          <td colSpan="4" className={styles.tablecolumn}>
+            <span>Obvervação:</span> {note}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
   );
 }
+
+export default DetailedCardShift;

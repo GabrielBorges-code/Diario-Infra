@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 import Container from "../../components/Container";
-import DetailedCardShift from "../../components/DetailedCardShift";
+import CardShift from "../../components/CardShift";
 
 export default function PreviousShift() {
   const [database, setDatabase] = useState([]);
@@ -20,8 +20,6 @@ export default function PreviousShift() {
       .catch((err) => console.log(err));
   }, [database]);
 
-  console.log(database);
-
   return (
     <Container>
       <h1>Turnos Anteriores</h1>
@@ -31,7 +29,7 @@ export default function PreviousShift() {
           .slice(0)
           .reverse()
           .map((data) => (
-          <DetailedCardShift
+          <CardShift
             key={data.id}
             id={data.id} 
             shift={data.shift}

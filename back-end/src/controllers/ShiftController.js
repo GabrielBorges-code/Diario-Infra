@@ -41,14 +41,61 @@ module.exports = {
   inserir: async (req, res) => {
     let json = { error: "", result: {} };
 
+    // console.log(req)
+    let activy_1;
+    let activy_2;
+    let activy_3;
+    let activy_4;
+    let activy_5;
+
+    if (req.body.activy_1 === true) {
+      activy_1 = "feito";
+
+    } else {
+      activy_1 = "não";
+
+    };
+
+    if (req.body.activy_2 === true) {
+      activy_2 = "feito";
+
+    } else {
+      activy_2 = "não";
+
+    };
+
+    if (req.body.activy_3 === true) {
+      activy_3 = "feito";
+
+    } else {
+      activy_3 = "não";
+
+    };
+
+    if (req.body.activy_4 === true) {
+      activy_4 = "feito";
+
+    } else {
+      activy_4 = "não";
+
+    };
+
+    if (req.body.activy_5 === true) {
+      activy_5 = "feito";
+
+    } else {
+      activy_5 = "não";
+
+    } 
+
     let shift = req.body.shift
     let responsible_NOC = req.body.responsible_NOC;
     let date_and_time_shift = req.body.date_and_time_shift;
-    let activy_1 = req.body.activy_1;
-    let activy_2 = req.body.activy_2;
-    let activy_3 = req.body.activy_3;
-    let activy_4 = req.body.activy_4;
-    let activy_5 = req.body.activy_5;
+    // let activy_1 = req.body.activy_1;
+    // let activy_2 = req.body.activy_2;
+    // let activy_3 = req.body.activy_3;
+    // let activy_4 = req.body.activy_4;
+    // let activy_5 = req.body.activy_5;
     let note = req.body.note;
 
     if (responsible_NOC) {

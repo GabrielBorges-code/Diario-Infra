@@ -23,7 +23,6 @@ export default function RegisterTicket() {
   
   const onSubmit = (data) => {
     try {
-      // console.log(data);
       fetch("http://localhost:3001/api/diario-infra", {
         method: "POST",
         headers: {

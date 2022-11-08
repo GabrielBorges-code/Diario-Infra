@@ -10,14 +10,11 @@ import Button from "../../components/Button";
 
 import styles from "./styles.module.css";
 
-// import CSV from "../../components/CSV";
-
 export default function RegisterShift() {
   const navigate = useNavigate();
 
   const onSubmit = (data) => {
     try {
-      console.log(data);
       fetch("http://localhost:3001/api/passagem-de-turno", {
         method: "POST",
         headers: {
@@ -116,8 +113,6 @@ export default function RegisterShift() {
           <Button text="Enviar" type="submit" />
         </div>
       </form>
-
-      {/* <CSV title="Download CSV" filename="turnos.csv" /> */}
     </Container>
   );
 }

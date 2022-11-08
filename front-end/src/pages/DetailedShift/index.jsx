@@ -2,19 +2,19 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 
 import Container from "../../components/Container";
-import DetailedCardTicket from "../../components/DetailedCardTicket";
+import DetailedCardShift from "../../components/DetailedCardShift";
 import Button from "../../components/Button";
 
 import styles from "./styles.module.css";
 
-export default function DetailedTicket() {
+export default function DetailedShift() {
   const [database, setDatabase] = useState([]);
   const navigate = useNavigate();
 
   const { id } = useParams();
 
   useEffect(() => {
-    fetch(`http://localhost:3001/api/diario-infra/${id}`, {
+    fetch(`http://localhost:3001/api/passagem-de-turno/${id}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -32,7 +32,7 @@ export default function DetailedTicket() {
     const deleteConfirm = window.confirm("Você tem certeza que deseja apagar?");
 
     if (deleteConfirm) {
-      fetch(`http://localhost:3001/api/diario-infra/${id}`, {
+      fetch(`http://localhost:3001/api/passagem-de-turno/${id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -40,7 +40,7 @@ export default function DetailedTicket() {
       })
         .then((resp) => resp.json())
         .then((data) => {
-          navigate("/chamados-anteriores", {
+          navigate("/turnos-anteriores", {
             state: { message: "Turno apagado com sucesso" },
           });
         })
@@ -55,26 +55,19 @@ export default function DetailedTicket() {
   return (
     <Container>
       <h1>
-        {database.requisition_type} {database.num_ticket}
+        {database.responsible_NOC} - {database.date_and_time_shift} {database.shift}
       </h1>
 
-      <DetailedCardTicket
-        id={database.id}
+      <DetailedCardShift
+        date_and_time_shift={database.date_and_time_shift}
         shift={database.shift}
-        date_and_time_ticket={database.date_and_time_ticket}
-        num_ticket={database.num_ticket}
-        requisition_type={database.requisition_type}
         responsible_NOC={database.responsible_NOC}
-        priority={database.priority}
-        intermittent={database.intermittent}
-        responsible_island={database.responsible_island}
-        responsible_triggered={database.responsible_triggered}
-        activation_time={database.activation_time}
-        out_of_office={database.out_of_office}
-        status={database.status}
-        warning_email={database.warning_email}
-        type_of_activation={database.type_of_activation}
-        note={database.note}  
+        activy_1={database.activy_1}
+        activy_2={database.activy_2}
+        activy_3={database.activy_3}
+        activy_4={database.activy_4}
+        activy_5={database.activy_5}
+        note={database.note}
       /> 
   
 

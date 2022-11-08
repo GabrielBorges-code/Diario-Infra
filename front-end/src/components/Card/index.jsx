@@ -1,6 +1,6 @@
 import style from "./style.module.css";
 
-import Edit from "../../assets/icons/edit.png";
+// import Edit from "../../assets/icons/edit.png";
 import Delete from "../../assets/icons/delete.png";
 import View from "../../assets/icons/view.png";
 import { useNavigate } from "react-router";
@@ -17,12 +17,10 @@ export default function Card({
   const navigate = useNavigate();
 
   const handleNavigateToPage = (id) => {
-    // alert(id)
     navigate(`/chamado-detalhado/${id}`);
   };
 
   const handleDeleteShift = (id) => {
-    // console.log(id);
     const deleteConfirm = window.confirm("Você tem certeza que deseja apagar?");
 
     if (deleteConfirm) {
@@ -37,10 +35,10 @@ export default function Card({
     }
   };
 
-  const handleNavigateToEditPage = (id) => {
-    // window.alert(id)
-    navigate(`/editar-chamado/${id}`)
-  }
+  // const handleNavigateToEditPage = (id) => {
+  //   // window.alert(id)
+  //   navigate(`/editar-chamado/${id}`)
+  // }
 
   return (
     <div className={style.card}>
@@ -67,14 +65,14 @@ export default function Card({
                   onClick={() => handleNavigateToPage(id)}
                 />
               </p>
-              <p className={style.iconsbottom}>
+              {/* <p className={style.iconsbottom}>
                 <img 
                   className={style.img}  
                   src={Edit} 
                   alt="imagem editar" 
                   onClick={() => handleNavigateToEditPage(id)}
                 />
-              </p>
+              </p> */}
               <p className={style.iconsbottom}>
                 <img
                   className={style.img}

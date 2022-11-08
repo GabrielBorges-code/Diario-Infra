@@ -43,6 +43,9 @@ bower_components
 build/Release
 
 # Dependency directories
+ node_modules
+/node_modules
+node_modules
 node_modules/
 jspm_packages/
 
@@ -145,5 +148,5 @@ dist
 
 querys.sql
 
-variaveis.env
-variaveis.env
+
+ databaseConnection.env

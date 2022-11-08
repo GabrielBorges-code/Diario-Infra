@@ -1,7 +1,6 @@
 import style from "./style.module.css";
 
-export default function DaitailedShift({
-  // id,
+export default function DetailedCardTicket({
   shift,
   date_and_time_ticket,
   num_ticket,
@@ -18,8 +17,6 @@ export default function DaitailedShift({
   type_of_activation,
   note
 }) {
-
-
   return (
     <div className={style.card}>
       <table className={style.table}>

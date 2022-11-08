@@ -3,7 +3,7 @@ const db = require("../db");
 module.exports = {
   buscarTodos: () => {
     return new Promise((aceito, rejeitado) => {
-      db.query("SELECT * FROM shift", (error, results) => {
+      db.query("SELECT * FROM ticket_itsm", (error, results) => {
         if (error) {
           rejeitado(error);
           return;
@@ -16,7 +16,7 @@ module.exports = {
   buscarUm: (codigo) => {
     return new Promise((aceito, rejeitado) => {
       db.query(
-        "SELECT * FROM shift WHERE id = ?",
+        "SELECT * FROM ticket_itsm WHERE id = ?",
         [codigo],
         (error, results) => {
           if (error) {
@@ -34,27 +34,43 @@ module.exports = {
   },
 
   inserir: (
-      shift, 
-      date_and_time_ticket, 
-      num_ticket, 
-      requisition_type, 
-      responsible_NOC, 
-      priority, 
-      intermittent, 
-      responsible_island, 
-      responsible_triggered, 
-      activation_time, 
-      out_of_office, 
-      status, 
-      warning_email, 
-      type_of_activation, 
-      note
-    ) => {
+    shift,
+    date_and_time_ticket,
+    num_ticket,
+    requisition_type,
+    responsible_NOC,
+    priority,
+    intermittent,
+    responsible_island,
+    responsible_triggered,
+    activation_time,
+    out_of_office,
+    status,
+    warning_email,
+    type_of_activation,
+    note
+  ) => {
     return new Promise((aceito, rejeitado) => {
       db.query(
         // "INSERT INTO carros (modelo, placa) VALUES (?, ?)",
-        "INSERT INTO shift (shift, date_and_time_ticket, num_ticket, requisition_type, responsible_NOC, priority, intermittent, responsible_island, responsible_triggered, activation_time, out_of_office, status, warning_email, type_of_activation, note) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
-        [shift, date_and_time_ticket, num_ticket, requisition_type, responsible_NOC, priority, intermittent, responsible_island, responsible_triggered, activation_time, out_of_office, status, warning_email, type_of_activation, note],
+        "INSERT INTO ticket_itsm (shift, date_and_time_ticket, num_ticket, requisition_type, responsible_NOC, priority, intermittent, responsible_island, responsible_triggered, activation_time, out_of_office, status, warning_email, type_of_activation, note) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+        [
+          shift,
+          date_and_time_ticket,
+          num_ticket,
+          requisition_type,
+          responsible_NOC,
+          priority,
+          intermittent,
+          responsible_island,
+          responsible_triggered,
+          activation_time,
+          out_of_office,
+          status,
+          warning_email,
+          type_of_activation,
+          note,
+        ],
         (error, results) => {
           if (error) {
             rejeitado(error);
@@ -67,34 +83,51 @@ module.exports = {
   },
 
   alterar: (
-      shift, 
-      date_and_time_ticket, 
-      num_ticket, 
-      requisition_type, 
-      responsible_NOC, 
-      priority, 
-      intermittent, 
-      responsible_island, 
-      responsible_triggered, 
-      activation_time, 
-      out_of_office, 
-      status, 
-      warning_email, 
-      type_of_activation, 
-      note,
-      codigo 
-    ) => {
+    shift,
+    date_and_time_ticket,
+    num_ticket,
+    requisition_type,
+    responsible_NOC,
+    priority,
+    intermittent,
+    responsible_island,
+    responsible_triggered,
+    activation_time,
+    out_of_office,
+    status,
+    warning_email,
+    type_of_activation,
+    note,
+    codigo
+  ) => {
     return new Promise((aceito, rejeitado) => {
       db.query(
         // "UPDATE carros SET modelo = ?, placa = ? WHERE codigo = ?",
-        "UPDATE shift SET shift = ?, date_and_time_ticket = ?, num_ticket = ?, requisition_type = ?, responsible_NOC = ?, priority = ?, intermittent = ?, responsible_island = ?, responsible_triggered = ?, activation_time = ?, out_of_office = ?, status = ?, warning_email = ?, type_of_activation = ?, note = ? WHERE id = ?",
-        [shift, date_and_time_ticket, num_ticket, requisition_type, responsible_NOC, priority, intermittent, responsible_island, responsible_triggered, activation_time, out_of_office, status, warning_email, type_of_activation, note, codigo],
+        "UPDATE shift SET ticket_itsm = ?, date_and_time_ticket = ?, num_ticket = ?, requisition_type = ?, responsible_NOC = ?, priority = ?, intermittent = ?, responsible_island = ?, responsible_triggered = ?, activation_time = ?, out_of_office = ?, status = ?, warning_email = ?, type_of_activation = ?, note = ? WHERE id = ?",
+        [
+          shift,
+          date_and_time_ticket,
+          num_ticket,
+          requisition_type,
+          responsible_NOC,
+          priority,
+          intermittent,
+          responsible_island,
+          responsible_triggered,
+          activation_time,
+          out_of_office,
+          status,
+          warning_email,
+          type_of_activation,
+          note,
+          codigo,
+        ],
         (error, results) => {
           if (error) {
             rejeitado(error);
             return;
           }
-          aceito(results); 
+          aceito(results);
         }
       );
     });
@@ -102,15 +135,17 @@ module.exports = {
 
   excluir: (codigo) => {
     return new Promise((aceito, rejeitado) => {
-      db.query("DELETE FROM shift WHERE id = ?", 
-      [codigo], 
-      (error, results) => {
-        if (error) {
-          rejeitado(error);
-          return;
+      db.query(
+        "DELETE FROM ticket_itsm WHERE id = ?",
+        [codigo],
+        (error, results) => {
+          if (error) {
+            rejeitado(error);
+            return;
+          }
+          aceito(results);
         }
-        aceito(results);
-      });
+      );
     });
-  }
+  },
 };

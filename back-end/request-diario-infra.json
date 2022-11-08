@@ -1,0 +1,252 @@
+{
+	"info": {
+		"_postman_id": "41678da9-10ab-4bff-9dce-1b8c301651fe",
+		"name": "Diario-Infra",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11739350"
+	},
+	"item": [
+		{
+			"name": "Buscar Chamados",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/diario-infra",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"diario-infra"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar Turnos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/passagem-de-turno",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"passagem-de-turno"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Busca Um Chamado",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/diario-infra/19",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"diario-infra",
+						"19"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Busca Um Turno",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/passagem-de-turno/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"passagem-de-turno",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualiza Chamado",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"shift\": \"asdfasdf\", \r\n    \"date_and_time_ticket\": \" 13/10/2022 16:54\", \r\n    \"num_ticket\": \"123456\", \r\n    \"requisition_type\": \"Incidente\", \r\n    \"responsible_NOC\": \"Gabriel Borges\", \r\n    \"priority\": \"Média\", \r\n    \"intermittent\": \"Sim\", \r\n    \"responsible_island\": \"Ilha ]teste\", \r\n    \"responsible_triggered\": \"Claúdio\", \r\n    \"activation_time\": \"23:10\", \r\n    \"out_of_office\": \"Sim\", \r\n    \"status\": \"Aberto\", \r\n    \"warning_email\": \"Sim\", \r\n    \"type_of_activation\": \"Ligação\", \r\n    \"note\": \"Vasco da Gama\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/diario-infra/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"diario-infra",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualiza Turno",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"activy_1\": false,\r\n    \"activy_2\": false,\r\n    \"activy_3\": false,\r\n    \"activy_4\": false,\r\n    \"activy_5\": false,\r\n    \"date_and_time_shift\": \"07/11/2022\",\r\n    \"note\": \"Que observação é essa? Não sei\",\r\n    \"responsible_NOC\": \"João Gabriel\",\r\n    \"shift\": \"Noturno\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/passagem-de-turno/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"passagem-de-turno",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deleta Turno",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/passagem-de-turno/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"passagem-de-turno",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deleta Chamado",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/diario-infra/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"diario-infra",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Insere Chamado",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"shift\": \"Testado\", \r\n    \"date_and_time_ticket\": \"24/10/2022 14:40\", \r\n    \"num_ticket\": \"999999\", \r\n    \"requisition_type\": \"Solicitação\", \r\n    \"responsible_NOC\": \"Gabriel B Teste\", \r\n    \"priority\": \"Média\", \r\n    \"intermittent\": \"Sim\", \r\n    \"responsible_island\": \"Banco de Dados\", \r\n    \"responsible_triggered\": \"Dihemy\", \r\n    \"activation_time\": \"15:00\", \r\n    \"out_of_office\": \"Sim\", \r\n    \"status\": \"Aberto\", \r\n    \"warning_email\": \"Sim\", \r\n    \"type_of_activation\": \"Teams\", \r\n    \"note\": \"Essa é um observação um pouco mais extensa porque eu não sei o q estou falando, as vezes eu quero almoçar novamente\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/diario-infra",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"diario-infra"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Insere Turno",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"activy_1\": true,\r\n    \"activy_2\": true,\r\n    \"activy_3\": true,\r\n    \"activy_4\": true,\r\n    \"activy_5\": true,\r\n    \"date_and_time_shift\": \"14/05/1998\",\r\n    \"note\": \"Que observação maravilhosa\",\r\n    \"responsible_NOC\": \"Gabriel Borges\",\r\n    \"shift\": \"Diurno\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/passagem-de-turno",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"passagem-de-turno"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

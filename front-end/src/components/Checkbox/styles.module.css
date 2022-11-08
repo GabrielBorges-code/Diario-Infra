@@ -1,0 +1,11 @@
+.text {
+  font-size: 1.75em;
+  color: var(--white);
+  /* margin-right: 8px; */
+}
+
+input, input:checked {
+    margin: 12px 0;
+    width: 25px;
+    height: 25px;
+}

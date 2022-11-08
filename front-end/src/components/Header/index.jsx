@@ -10,14 +10,17 @@ export default function Header() {
         <Link to="/"><img src={icon} alt="img monitoring" /></Link>
 
         <ul className={styles.list}>
-            <li className={styles.item}>
-                <Link to="/">Home</Link>
-            </li>
-            <li className={styles.item}>
-                <Link to="/passagem-de-turno">Passagem de turno</Link>
-            </li>
+            {/* <li className={styles.item}>
+                <Link to="/CSV">CSV</Link>
+            </li> */}
             <li className={styles.item}>
                 <Link to="/turnos-anteriores">Turnos Anteriores</Link>
+            </li>
+            <li className={styles.item}>
+                <Link to="/registro-de-chamados">Registro de Chamados</Link>
+            </li>
+            <li className={styles.item}>
+                <Link to="/chamados-anteriores">Chamados Anteriores</Link>
             </li>
         </ul>
         

@@ -2,7 +2,7 @@ CREATE DATABASE infrastructure_diary;
 
 USE infrastructure_diary;
 
-CREATE TABLE shift (
+CREATE TABLE ticket_itsm (
     id int primary key auto_increment,
     shift varchar(50),
     date_and_time_ticket varchar(50),
@@ -20,3 +20,23 @@ CREATE TABLE shift (
     type_of_activation varchar(50),
     note text
 );
+
+CREATE TABLE shift (
+	id int primary key auto_increment,
+	shift varchar(50),
+	responsible_NOC varchar(50),
+	date_and_time_shift varchar(50),
+	activy_1 varchar(50),
+	activy_2 varchar(50),
+	activy_3 varchar(50),
+	activy_4 varchar(50),
+	activy_5 varchar(50),
+	note text
+		
+);
+
+SHOW TABLES;
+
+SELECT * FROM ticket_itsm;
+
+SELECT * FROM shift;

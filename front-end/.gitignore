@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+ node_modules
 /.pnp
 .pnp.js
 
@@ -24,3 +25,4 @@ yarn-error.log*
 
 diario-infra-plan-result.jpeg
 diario-infra-plan.jpeg
+teams-print.jpeg

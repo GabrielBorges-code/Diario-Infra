@@ -11,7 +11,7 @@ export default function TextArea({ label, type, name, control }) {
       <Controller
         name={name}
         control={control}
-        rules={{ required: true }}
+        // rules={{ required: true }}
         render={({ field }) => (
           <textarea
             {...field}

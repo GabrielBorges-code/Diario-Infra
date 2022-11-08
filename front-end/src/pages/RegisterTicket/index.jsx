@@ -45,7 +45,7 @@ export default function RegisterTicket() {
 
   return (
     <Container>
-      <h1>Passagem de Turno</h1>
+      <h1>Registro de Chamado</h1>
 
       <form onSubmit={handleSubmit(onSubmit)}>
         <Select

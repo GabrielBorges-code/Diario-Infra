@@ -24,7 +24,7 @@ export default function PreviousTicket() {
 
   return (
     <Container>
-      <h1>Turnos Anteriores</h1>
+      <h1>Chamados Anteriores</h1>
 
       {database.length > 0 &&
         database

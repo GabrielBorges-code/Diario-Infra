@@ -1,6 +1,6 @@
 import style from "./style.module.css";
 
-export default function DaitailedShift({
+export default function DetailedCardTicket({
   shift,
   date_and_time_ticket,
   num_ticket,

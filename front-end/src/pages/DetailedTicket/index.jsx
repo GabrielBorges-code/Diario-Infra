@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 
 import Container from "../../components/Container";
-import DatailedCard from "../../components/DatailedCard";
+import DetailedCardTicket from "../../components/DetailedCardTicket";
 import Button from "../../components/Button";
 
 import styles from "./styles.module.css";
@@ -58,7 +58,7 @@ export default function DetailsTicket() {
         {database.requisition_type} {database.num_ticket}
       </h1>
 
-      <DatailedCard
+      <DetailedCardTicket
         id={database.id}
         shift={database.shift}
         date_and_time_ticket={database.date_and_time_ticket}

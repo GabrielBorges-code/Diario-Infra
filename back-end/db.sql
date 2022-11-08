@@ -23,8 +23,9 @@ CREATE TABLE ticket_itsm (
 
 CREATE TABLE shift (
 	id int primary key auto_increment,
-	date_and_time_shift varchar(50),
+	shift varchar(50),
 	responsible_NOC varchar(50),
+	date_and_time_shift varchar(50),
 	activy_1 varchar(50),
 	activy_2 varchar(50),
 	activy_3 varchar(50),

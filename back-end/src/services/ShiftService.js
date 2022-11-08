@@ -34,8 +34,9 @@ module.exports = {
   },
 
   inserir: (
-    date_and_time_shift,
+    shift,
     responsible_NOC,
+    date_and_time_shift,
     activy_1,
     activy_2,
     activy_3,
@@ -46,10 +47,11 @@ module.exports = {
     return new Promise((aceito, rejeitado) => {
       db.query(
         // "INSERT INTO carros (modelo, placa) VALUES (?, ?)",
-        "INSERT INTO shift (date_and_time_shift, responsible_NOC, activy_1, activy_2, activy_3, activy_4, activy_5, note) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+        "INSERT INTO shift (shift, responsible_NOC,date_and_time_shift, activy_1, activy_2, activy_3, activy_4, activy_5, note) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
         [
-          date_and_time_shift,
+          shift,
           responsible_NOC,
+          date_and_time_shift,
           activy_1,
           activy_2,
           activy_3,
@@ -69,8 +71,9 @@ module.exports = {
   },
 
   alterar: (
-    date_and_time_shift,
+    shift,
     responsible_NOC,
+    date_and_time_shift,
     activy_1,
     activy_2,
     activy_3,
@@ -81,10 +84,11 @@ module.exports = {
   ) => {
     return new Promise((aceito, rejeitado) => {
       db.query(
-        "UPDATE shift SET date_and_time_shift = ?, responsible_NOC = ?, activy_1 = ?, activy_2 = ?, activy_3 = ?, activy_4 = ?, activy_5 = ?, note = ? WHERE id = ?",
+        "UPDATE shift SET shift = ?, responsible_NOC = ?,date_and_time_shift = ?, activy_1 = ?, activy_2 = ?, activy_3 = ?, activy_4 = ?, activy_5 = ?, note = ? WHERE id = ?",
         [
-          date_and_time_shift,
+          shift,
           responsible_NOC,
+          date_and_time_shift,
           activy_1,
           activy_2,
           activy_3,

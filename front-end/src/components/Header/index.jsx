@@ -14,7 +14,7 @@ export default function Header() {
                 <Link to="/">Home</Link>
             </li> */}
             <li className={styles.item}>
-                <Link to="/">Turnos Anteriores</Link>
+                <Link to="/turnos-anteriores">Turnos Anteriores</Link>
             </li>
             <li className={styles.item}>
                 <Link to="/registro-de-chamados">Registro de Chamados</Link>

@@ -9,8 +9,9 @@ module.exports = {
     for (let i in shifts) {
       json.result.push({
         id: shifts[i].id,
-        date_and_time_shift: shifts[i].date_and_time_shift,
+        shift: shifts[i].shift,
         responsible_NOC: shifts[i].responsible_NOC,
+        date_and_time_shift: shifts[i].date_and_time_shift,
         activy_1: shifts[i].activy_1,
         activy_2: shifts[i].activy_2,
         activy_3: shifts[i].activy_3,
@@ -28,10 +29,10 @@ module.exports = {
 
     let codigo = req.params.codigo;
 
-    let turno = await ShiftService.buscarUm(codigo);
+    let shift = await ShiftService.buscarUm(codigo);
 
-    if (turno) {
-      json.result = turno;
+    if (shift) {
+      json.result = shift;
     }
 
     res.json(json);
@@ -40,8 +41,9 @@ module.exports = {
   inserir: async (req, res) => {
     let json = { error: "", result: {} };
 
-    let date_and_time_shift = req.body.date_and_time_shift;
+    let shift = req.body.shift
     let responsible_NOC = req.body.responsible_NOC;
+    let date_and_time_shift = req.body.date_and_time_shift;
     let activy_1 = req.body.activy_1;
     let activy_2 = req.body.activy_2;
     let activy_3 = req.body.activy_3;
@@ -52,8 +54,9 @@ module.exports = {
     if (responsible_NOC) {
       // verifica se o turno foi preenchido, se se sim ele executa a query
       await ShiftService.inserir(
-        date_and_time_shift,
+        shift,
         responsible_NOC,
+        date_and_time_shift,
         activy_1,
         activy_2,
         activy_3,
@@ -62,8 +65,9 @@ module.exports = {
         note
       );
       json.result = {
-        date_and_time_shift,
+        shift,
         responsible_NOC,
+        date_and_time_shift,
         activy_1,
         activy_2,
         activy_3,
@@ -82,8 +86,9 @@ module.exports = {
 
     let codigo = req.params.codigo;
 
-    let date_and_time_shift = req.body.date_and_time_shift;
+    let shift = req.body.shift;
     let responsible_NOC = req.body.responsible_NOC;
+    let date_and_time_shift = req.body.date_and_time_shift;
     let activy_1 = req.body.activy_1;
     let activy_2 = req.body.activy_2;
     let activy_3 = req.body.activy_3;
@@ -93,8 +98,9 @@ module.exports = {
 
     if (codigo) {
       await ShiftService.alterar(
-        date_and_time_shift,
+        shift,
         responsible_NOC,
+        date_and_time_shift,
         activy_1,
         activy_2,
         activy_3,
@@ -106,8 +112,9 @@ module.exports = {
 
       json.result = {
         // codigo,
-        date_and_time_shift,
+        shift,
         responsible_NOC,
+        date_and_time_shift,
         activy_1,
         activy_2,
         activy_3,

@@ -1,11 +1,11 @@
-import style from "./style.module.css";
+import styles from "./styles.module.css";
 
 import { Controller } from "react-hook-form";
 
 export default function TextArea({ label, type, name, control }) {
   return (
     <>
-      <label className={style.label} htmlFor={label}>
+      <label className={styles.label} htmlFor={label}>
         {label}
       </label>
       <Controller
@@ -16,7 +16,7 @@ export default function TextArea({ label, type, name, control }) {
           <textarea
             {...field}
             control={control}
-            className={style.textarea}
+            className={styles.textarea}
             type={type}
             name={name}
             id={label}

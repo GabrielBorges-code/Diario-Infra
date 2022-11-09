@@ -37,7 +37,6 @@ export default function RegisterShift() {
   const {
     control,
     handleSubmit,
-    // watch,
     formState: { errors },
   } = useForm();
 

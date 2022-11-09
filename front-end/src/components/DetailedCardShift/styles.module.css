@@ -1,7 +1,7 @@
 
 .card {
     font-size: 1.2em;
-    color: var(--text);
+    /* color: var(--text); */
     border: 3px solid white;
     margin: 15px 0;
     padding: 10px;
@@ -37,6 +37,4 @@
 .img {
     filter: brightness(100);
     cursor: pointer;
-    /* transition: 0.3s; */
-
 }

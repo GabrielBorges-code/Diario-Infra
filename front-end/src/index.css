@@ -1,49 +1,46 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap");
 
 :root {
+  --background: #009FA8;
+  --background2: #fafafa;
+  --white: #ffffff;
+
+  --light--gray: #f0f0f0;
+  --gray: #e1e1e6;
+  --dark--gray: #252525;
+
+  --light--blue: #6bbff4;
+  --dark--blue: #0693e3;
+
+  /* 
     --background: #121214;
     --background2: #202020;
     --white: #fff;
     --gray: #e1e1e6;
     --text: #a8a8b3;
-
-    --primary: #8257e5;
-    --primary-darker: #28203e;
-    --primary-hover: #9466ff;
-    --primary-border: #6833e4;
-    --primary-shape: #734bd1;
-    --primary-light: #996dff;
-    --discover: #6a80ff;
-
-    --discover-blue: #4863f7;
-
     --green: #04d361;
-    --ignite-green: #00875f;
-    --ignite-light: #00b37e;
-    --ignite-dark: #015f43;
-    --ignite-low: #00291d;
-    --ignite-mid: #00875f;
- 
-} 
+    --blue: #4863f7; 
+    */
+}
 
 body {
-    font-family: 'Ubuntu', sans-serif;
-    background-color: var(--background2);
-    /* background-color: #202020; */
+  font-family: "Ubuntu", sans-serif;
+  background-color: var(--background2);
 }
 
 h1 {
-    font-size: 2.5em;
-    color: var(--gray);
+  font-size: 2.5em;
+  color: var(--dark--gray);
 }
 
 h2 {
-    font-size: 2em;
-    color: var(--gray);
+  font-size: 2em;
+  color: var(--dark--gray);
 }
 
-p, a {
-    font-size: 1.5em;
-    color: var(--gray);
+p,
+a {
+  font-size: 1.5em;
+  color: var(--dark--gray);
 
 }

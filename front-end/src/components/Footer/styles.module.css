@@ -5,10 +5,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* text-align: center; */
     flex-direction: column;
-    /* justify-content: flex-start; */
-    
 }
 
 .footer a {
@@ -22,9 +19,11 @@
 
 .footer p {
     margin-top: 10px;
+    color: var(--white);
 }
 
 .footer p span {
-    color: var(--green);
+    /* color: var(--green); */
+    color: var(--dark--gray);
     font-weight: bold;
 }

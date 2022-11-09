@@ -1,20 +1,17 @@
 .button {
     cursor: pointer;
-    background-color: var(--discover-blue);
+    background-color: var(--light--blue);
     color: var(--white);
     font-weight: bold;
     border: none;
     font-size: 2em;
-    width: 180px;
+    min-width: 180px;
     height: 40px;
     border-radius: 5px;
     transition: 0.5s;
     display: block;
-    /* margin: 0 auto; */
-    margin-left: 24px;
-    
 }
 
 .button:hover {
-    background-color: var(--green);
+    background-color: var(--dark--blue);
 }

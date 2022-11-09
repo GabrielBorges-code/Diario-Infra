@@ -18,7 +18,6 @@ export default function CardShift({
   const navigate = useNavigate();
 
   const handleNavigateToPage = (id) => {
-    // window.alert(id)
     navigate(`/turno-detalhado/${id}`);
   };
 

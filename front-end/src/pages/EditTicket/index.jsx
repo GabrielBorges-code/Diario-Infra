@@ -165,13 +165,13 @@ export default function EditTicket() {
           control={control}
         />
 
-        <Input
+        <Select
           label="Tipo de acionamento"
-          type="text"
+          options={["Ligação", "Teams", "WhatsApp", "Presencial"]}
           name="type_of_activation"
           control={control}
         />
-
+        
         <TextArea label="Observação" control={control} name="note" />
 
         <div className={style.inline}>

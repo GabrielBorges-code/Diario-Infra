@@ -1,24 +1,17 @@
 
 .card {
     font-size: 1.2em;
-    color: var(--text);
+    /* color: var(--text); */
     border: 3px solid white;
-    /* width: 100%;  */
     margin: 15px 0;
     padding: 10px;
     border-radius: 5px;
     
 } 
 
-.card:hover {
-    background: var(--background);
-    /* cursor: pointer; */
-}
-
-
 .table {
     width: 100%;
-    /* height: 100px; */
+    height: 350px;
 }
 
 .tablecolumn {
@@ -29,7 +22,6 @@
 
 .tableicon {
     width: 30px;
-    /* background: red; */
 
 }
 
@@ -39,21 +31,10 @@
 
 .table tr td span {
     font-weight: bold; 
-    /* margin: 10 0; */
-    /* margin-left: 20px; */
-    
+
 }
 
 .img {
     filter: brightness(100);
     cursor: pointer;
-    /* transition: 0.3s; */
-
 }
-
-.img:hover {
-    transform: scale(1.1);
-}
-/* .card {
-    justify-content: space-around;
-} */

@@ -42,7 +42,6 @@ export default function PreviousTicket() {
           ))}
 
       {database.length === 0 && <p>Não há itens para ser exibido</p>}
-   
     </Container>
   );
 }

@@ -1,13 +1,22 @@
-import {IMaskInput} from "react-imask";
+import { IMaskInput } from "react-imask";
 
 import { Controller } from "react-hook-form";
 
-import style from "./style.module.css";
+import styles from "./styles.module.css";
 
-export default function Input({ label, name, control, mask, placeholder, type, value, onChange }) {
+export default function Input({
+  label,
+  name,
+  control,
+  mask,
+  placeholder,
+  type,
+  value,
+  onChange,
+}) {
   return (
     <>
-      <label className={style.label} htmlFor={label}>
+      <label className={styles.label} htmlFor={label}>
         {label}
       </label>
       <Controller
@@ -18,12 +27,13 @@ export default function Input({ label, name, control, mask, placeholder, type, v
           <IMaskInput
             {...field}
             control={control}
-            className={style.input}
-            unmask={true} 
+            className={styles.input}
+            unmask={true}
             mask={mask}
             placeholder={placeholder}
             name={name}
             id={label}
+            required={true}
             // type={type}
             // placeholder={label}
             // value={value}

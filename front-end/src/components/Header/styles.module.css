@@ -5,8 +5,6 @@
     background-color: var(--background);
     height: 120px;
     display: flex;
-    /* justify-content: space-between; */
-    
 }
 
 .navBar {
@@ -14,7 +12,6 @@
     justify-content: space-between;
     flex-wrap: wrap;
     width: 1200px;
-    /* background-color: red; */
     margin: auto;
 }
 
@@ -31,12 +28,11 @@
 
 .item a {
     text-decoration: none;
-    color: var(--text);
+    color: var(--light--gray);
     font-weight: bold;
 }
 
 .item a:hover {
     color: var(--white);
     text-decoration: underline;
-    /* list-style: ; */
 }

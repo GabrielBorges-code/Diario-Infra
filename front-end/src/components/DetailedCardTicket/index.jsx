@@ -1,4 +1,4 @@
-import style from "./style.module.css";
+import styles from "./styles.module.css";
 
 export default function DetailedCardTicket({
   shift,
@@ -18,67 +18,67 @@ export default function DetailedCardTicket({
   note
 }) {
   return (
-    <div className={style.card}>
-      <table className={style.table}>
+    <div className={styles.card}>
+      <table className={styles.table}>
         <tbody>
           <tr>
-            <td className={style.tablecolumn}>
+            <td className={styles.tablecolumn}>
               <span>Turno:</span> {shift}
             </td>
-            <td className={style.tablecolumn}>
+            <td className={styles.tablecolumn}>
               <span>Data e Hora:</span> {date_and_time_ticket}
             </td>
-            <td className={style.tablecolumn}>
+            <td className={styles.tablecolumn}>
               <span>NOC Responsável:</span> {responsible_NOC}
             </td>
           </tr>
 
           <tr>
-            <td className={style.tablecolumn}>
+            <td className={styles.tablecolumn}>
               <span>Nº do Chamado:</span> {num_ticket}
             </td>
-            <td className={style.tablecolumn}>
+            <td className={styles.tablecolumn}>
               <span>Tipo de Requisição:</span> {requisition_type}
             </td>
-            <td className={style.tablecolumn}>
+            <td className={styles.tablecolumn}>
               <span>Prioridade:</span> {priority}
             </td>
           </tr>
 
           <tr>
-            <td className={style.tablecolumn}>
+            <td className={styles.tablecolumn}>
               <span>Houve Intermitência:</span> {intermittent}
             </td>
-            <td className={style.tablecolumn}>
+            <td className={styles.tablecolumn}>
               <span>Ilha Responsável:</span> {responsible_island}
             </td>
-            <td className={style.tablecolumn}>
+            <td className={styles.tablecolumn}>
               <span>Responsável Acionado:</span> {responsible_triggered}
             </td>
           </tr>
 
           <tr>
-            <td className={style.tablecolumn}>
+            <td className={styles.tablecolumn}>
               <span>Hora do Acionamento:</span> {activation_time}
             </td>
-            <td className={style.tablecolumn}>
+            <td className={styles.tablecolumn}>
               <span>Fora do Expediente:</span> {out_of_office}
             </td>
-            <td className={style.tablecolumn}>
+            <td className={styles.tablecolumn}>
               <span>Status do Chamado:</span> {status}
             </td>
           </tr>
           <tr>
-            <td className={style.tablecolumn}>
+            <td className={styles.tablecolumn}>
               <span>Email de Aivo:</span> {warning_email}
             </td>
-            <td className={style.tablecolumn}>
+            <td className={styles.tablecolumn}>
               <span>Tipo de Acionamento:</span> {type_of_activation}
             </td>
             
           </tr>
           <tr>
-            <td colSpan="4" className={style.tablecolumn}>
+            <td colSpan="4" className={styles.tablecolumn}>
               <span>Obvervação:</span> {note}
             </td>
           </tr>

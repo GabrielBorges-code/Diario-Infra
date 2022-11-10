@@ -6,12 +6,10 @@
     margin: 15px 0;
     padding: 0 18px;
     box-sizing: border-box;
-    /* border: none; */
 }
 
 .input, .label {
     font-size: 1.75em;
-    /* color: var(--white); */
 }
 
 .input::placeholder {

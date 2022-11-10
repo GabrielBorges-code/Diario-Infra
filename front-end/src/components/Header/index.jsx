@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 
-// import icon from "../../assets/icons/monitoring.png";
 import icon from "../../assets/icons/central_branco.png";
 import styles from "./styles.module.css";
 
@@ -8,7 +7,6 @@ export default function Header() {
   return (
     <header className={styles.heading}>
       <nav className={styles.navBar}>
-        {/* <Link to="/"><img src={icon} alt="img monitoring" /></Link> */}
         <Link to="/">
           <img src={icon} alt="Logo Central IT" />
         </Link>

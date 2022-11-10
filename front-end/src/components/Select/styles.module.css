@@ -4,13 +4,10 @@
     border-radius: 5px;
     padding: 0 18px;
     box-sizing: border-box;
-    /* background-color: var(--text); */
     background-color: var(--gray);
     margin: 15px 0;
 }
 
 .select, .label {
     font-size: 1.75em;
-    /* color: var(--white); */
-    
 }

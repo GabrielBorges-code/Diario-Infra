@@ -2,7 +2,6 @@ import { useNavigate } from "react-router";
 
 import styles from "./styles.module.css";
 
-// import Edit from "../../assets/icons/edit.png";
 import Delete from "../../assets/icons/delete.png";
 import View from "../../assets/icons/view.png";
 
@@ -35,10 +34,6 @@ export default function CardShift({
         .catch((err) => console.log(err));
     }
   };
-
-  // const handleNavigateToEditPage = (id) => {
-  //   navigate(`/editar-turno/${id}`);
-  // };
 
   return (
     <div className={styles.card}>

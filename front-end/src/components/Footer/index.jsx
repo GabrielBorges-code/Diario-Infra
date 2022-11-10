@@ -1,5 +1,5 @@
 import styles from "./styles.module.css";
-import githubicon from "../../assets/icons/github_2.png";
+import githubicon from "../../assets/icons/github.png";
 
 export default function Footer() {
     return(
@@ -12,5 +12,3 @@ export default function Footer() {
         </footer>
     );
 }
-
-// Footer;

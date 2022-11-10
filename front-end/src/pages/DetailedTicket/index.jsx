@@ -27,7 +27,6 @@ export default function DetailedTicket() {
       .catch((err) => console.log(err));
   }, [id]);
 
-  
   const handleDeleteShift = (id) => {
     const deleteConfirm = window.confirm("Você tem certeza que deseja apagar?");
 
@@ -47,10 +46,6 @@ export default function DetailedTicket() {
         .catch((err) => console.log(err));
     }
   };
-
-  // const handleNavigateToEditPage = (id) => {
-  //   navigate(`/editar-chamado/${id}`)
-  // }
 
   return (
     <Container>
@@ -74,23 +69,16 @@ export default function DetailedTicket() {
         status={database.status}
         warning_email={database.warning_email}
         type_of_activation={database.type_of_activation}
-        note={database.note}  
-      /> 
-  
+        note={database.note}
+      />
 
       <div className={styles.inline}>
-        {/* <Button 
-          text="Editar" 
-          type="button" 
-          onClick={() => handleNavigateToEditPage(id)}
-        /> */}
-        <Button 
-          text="Excluir" 
+        <Button
+          text="Excluir"
           type="button"
           onClick={() => handleDeleteShift(id)}
         />
       </div>
-      
     </Container>
   );
 }

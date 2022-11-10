@@ -10,7 +10,6 @@ export default function Checkbox({ label, name, control }) {
       <Controller
         name={name}
         control={control}
-        // rules={{ required: true }}
         render={({ field }) => (
           <input {...field} type="checkbox" name={name} id={label} />
         )}

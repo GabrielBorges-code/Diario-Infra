@@ -48,14 +48,10 @@ export default function DetailedShift() {
     }
   };
 
-  // const handleNavigateToEditPage = (id) => {
-  //   navigate(`/editar-chamado/${id}`)
-  // }
-
   return (
     <Container>
       <h1>
-        {database.responsible_NOC} - {database.date_and_time_shift} {database.shift}
+        Detalhes do Turno - {database.date_and_time_shift} - {database.shift}
       </h1>
 
       <DetailedCardShift
@@ -72,11 +68,6 @@ export default function DetailedShift() {
   
 
       <div className={styles.inline}>
-        {/* <Button 
-          text="Editar" 
-          type="button" 
-          onClick={() => handleNavigateToEditPage(id)}
-        /> */}
         <Button 
           text="Excluir" 
           type="button"

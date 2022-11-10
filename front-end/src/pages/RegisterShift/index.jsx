@@ -47,7 +47,6 @@ export default function RegisterShift() {
       <form onSubmit={handleSubmit(onSubmit)}>
         <Input
           label="Data do Turno"
-          // type="datetime-local"
           mask="00/00/0000"
           placeholder="dd/mm/aaaa"
           name="date_and_time_shift"

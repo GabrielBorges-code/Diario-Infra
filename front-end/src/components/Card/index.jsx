@@ -1,6 +1,5 @@
 import styles from "./styles.module.css";
 
-// import Edit from "../../assets/icons/edit.png";
 import Delete from "../../assets/icons/delete.png";
 import View from "../../assets/icons/view.png";
 import { useNavigate } from "react-router";
@@ -35,10 +34,6 @@ export default function Card({
     }
   };
 
-  // const handleNavigateToEditPage = (id) => {
-  //   navigate(`/editar-chamado/${id}`)
-  // }
-
   return (
     <div className={styles.card}>
       <table className={styles.table}>
@@ -64,14 +59,7 @@ export default function Card({
                   onClick={() => handleNavigateToPage(id)}
                 />
               </p>
-              {/* <p className={styles.iconsbottom}>
-                <img 
-                  className={styles.img}  
-                  src={Edit} 
-                  alt="imagem editar" 
-                  onClick={() => handleNavigateToEditPage(id)}
-                />
-              </p> */}
+
               <p className={styles.iconsbottom}>
                 <img
                   className={styles.img}

@@ -9,10 +9,7 @@ export default function Input({
   name,
   control,
   mask,
-  placeholder,
-  type,
-  value,
-  onChange,
+  placeholder
 }) {
   return (
     <>
@@ -22,9 +19,9 @@ export default function Input({
       <Controller
         name={name}
         control={control}
-        // rules={{ required: true }}
         render={({ field }) => (
           <IMaskInput
+            required
             {...field}
             control={control}
             className={styles.input}
@@ -33,11 +30,6 @@ export default function Input({
             placeholder={placeholder}
             name={name}
             id={label}
-            required={true}
-            // type={type}
-            // placeholder={label}
-            // value={value}
-            // onChange={onChange}
           />
         )}
       />

@@ -1,8 +1,7 @@
 
 .card {
     font-size: 1.2em;
-    /* color: var(--text); */
-    border: 3px solid white;
+    border: 3px solid var(--dark--gray);
     margin: 15px 0;
     padding: 10px;
     border-radius: 5px;

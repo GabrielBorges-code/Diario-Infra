@@ -12,18 +12,19 @@ export default function Select({ label, options, name, control }) {
       <Controller
         name={name}
         control={control}
+        rules={{ required: true }}
         render={({ field }) => (
           <select
-            required={true}
+            defaultValue={'DEFAULT'}
             {...field}
             className={styles.select}
             name={name}
             id={label}
           >
-            {/* <option selected={true} disabled>Escolha</option> */}
-            {options.map((option) => {
+            <option value="DEFAULT" disabled>Escolha uma opção...</option>
+            {options.map((option, id) => {
               return (
-                <option key={option} defaultValue={option.key}>
+                <option value={option} key={id}>
                   {option}
                 </option>
               );

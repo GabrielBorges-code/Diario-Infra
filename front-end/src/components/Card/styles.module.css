@@ -45,3 +45,14 @@
 .img:hover {
     transform: scale(1.1);
 }
+
+@media screen and (max-width: 800px) {
+    .tableicon p img {
+      width: 22px;
+    }
+  
+    .card {
+      font-size: 0.6em;
+    }
+  }
+  

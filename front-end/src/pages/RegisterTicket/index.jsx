@@ -22,7 +22,7 @@ export default function RegisterTicket() {
   
   const onSubmit = (data) => {
     try {
-      fetch("http://localhost:3001/api/diario-infra", {
+      fetch("http://10.105.80.191:3001/api/diario-infra", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

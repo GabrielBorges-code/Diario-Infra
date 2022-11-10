@@ -14,7 +14,7 @@ export default function DetailedShift() {
   const { id } = useParams();
 
   useEffect(() => {
-    fetch(`http://localhost:3001/api/passagem-de-turno/${id}`, {
+    fetch(`http://10.105.80.191:3001/api/passagem-de-turno/${id}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -32,7 +32,7 @@ export default function DetailedShift() {
     const deleteConfirm = window.confirm("Você tem certeza que deseja apagar?");
 
     if (deleteConfirm) {
-      fetch(`http://localhost:3001/api/passagem-de-turno/${id}`, {
+      fetch(`http://10.105.80.191:3001/api/passagem-de-turno/${id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",

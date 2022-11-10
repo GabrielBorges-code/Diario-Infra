@@ -9,7 +9,7 @@ export default function CSV({ title, filename, table }) {
   const [databaseTicket, setDatabaseTicket] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3001/api/relatorio-turnos/", {
+    fetch("http://10.105.80.191:3001/api/relatorio-turnos/", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -23,7 +23,7 @@ export default function CSV({ title, filename, table }) {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:3001/api/relatorio-chamados/", {
+    fetch("http://10.105.80.191:3001/api/relatorio-chamados/", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

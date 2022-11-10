@@ -7,7 +7,7 @@ export default function PreviousShift() {
   const [database, setDatabase] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3001/api/passagem-de-turno", {
+    fetch("http://10.105.80.191:3001/api/passagem-de-turno", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

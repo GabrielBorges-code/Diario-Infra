@@ -23,7 +23,7 @@ export default function Card({
     const deleteConfirm = window.confirm("Você tem certeza que deseja apagar?");
 
     if (deleteConfirm) {
-      fetch(`http://localhost:3001/api/diario-infra/${id}`, {
+      fetch(`http://10.105.80.191:3001/api/diario-infra/${id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",

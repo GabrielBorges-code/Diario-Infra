@@ -7,7 +7,7 @@ export default function PreviousTicket() {
   const [database, setDatabase] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3001/api/diario-infra", {
+    fetch("http://10.105.80.191:3001/api/diario-infra", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -42,7 +42,6 @@ export default function PreviousTicket() {
           ))}
 
       {database.length === 0 && <p>Não há itens para ser exibido</p>}
-   
     </Container>
   );
 }

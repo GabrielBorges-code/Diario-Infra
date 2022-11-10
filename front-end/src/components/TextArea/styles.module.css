@@ -2,14 +2,13 @@
     width: 100%;
     height: 200px;
     border-radius: 5px;
-    background-color: var(--text);
+    background-color: var(--gray);
     margin: 15px 0;
-    padding: 0;
-    border: none;
+    padding: 18px;
+    box-sizing: border-box;
 }
 
 .textarea, .label {
     font-size: 1.75em;
-    color: var(--white);
-    
+    color: var(--dark-gray);
 }

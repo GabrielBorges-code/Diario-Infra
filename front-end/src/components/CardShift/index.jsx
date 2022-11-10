@@ -2,7 +2,6 @@ import { useNavigate } from "react-router";
 
 import styles from "./styles.module.css";
 
-// import Edit from "../../assets/icons/edit.png";
 import Delete from "../../assets/icons/delete.png";
 import View from "../../assets/icons/view.png";
 
@@ -18,7 +17,6 @@ export default function CardShift({
   const navigate = useNavigate();
 
   const handleNavigateToPage = (id) => {
-    // window.alert(id)
     navigate(`/turno-detalhado/${id}`);
   };
 
@@ -26,7 +24,7 @@ export default function CardShift({
     const deleteConfirm = window.confirm("Você tem certeza que deseja apagar?");
 
     if (deleteConfirm) {
-      fetch(`http://localhost:3001/api/passagem-de-turno/${id}`, {
+      fetch(`http://10.105.80.191:3001/api/passagem-de-turno/${id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -36,10 +34,6 @@ export default function CardShift({
         .catch((err) => console.log(err));
     }
   };
-
-  // const handleNavigateToEditPage = (id) => {
-  //   navigate(`/editar-turno/${id}`);
-  // };
 
   return (
     <div className={styles.card}>

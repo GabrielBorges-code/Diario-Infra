@@ -1,7 +1,6 @@
 .text {
-  font-size: 1.75em;
-  color: var(--white);
-  /* margin-right: 8px; */
+  font-size: 1.5em;
+  color: var(--dark--gray);
 }
 
 input, input:checked {

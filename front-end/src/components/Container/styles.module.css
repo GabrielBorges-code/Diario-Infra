@@ -1,0 +1,28 @@
+.container {
+    width: 1200px;
+    margin: 44px auto;
+    min-height: 900px;
+}
+
+h1, h2 {
+    margin: 44px 0;
+}
+
+@media screen and (max-width: 800px) {
+    .container {
+        width: 100%;
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .container {
+        width: 100%;
+        padding: 0 15px;
+        box-sizing: border-box;
+
+
+    }
+
+}

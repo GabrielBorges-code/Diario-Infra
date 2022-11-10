@@ -1,9 +1,9 @@
-import style from "./style.module.css";
+import styles from "./styles.module.css";
 import githubicon from "../../assets/icons/github.png";
 
 export default function Footer() {
     return(
-        <footer className={style.footer}>
+        <footer className={styles.footer}>
             <a href="https://github.com/GabrielBorges-code/Diario-Infra" target="_blank" rel="noopener noreferrer">
                 <img src={githubicon} alt="github icon" />
             </a>
@@ -12,5 +12,3 @@ export default function Footer() {
         </footer>
     );
 }
-
-// Footer;

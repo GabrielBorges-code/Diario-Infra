@@ -1,59 +1,53 @@
-
 .card {
-    font-size: 1.2em;
-    color: var(--text);
-    border: 3px solid white;
-    /* width: 100%;  */
-    margin: 15px 0;
-    padding: 10px;
-    border-radius: 5px;
-    
-} 
-
-.card:hover {
-    background: var(--background);
-    /* cursor: pointer; */
+  font-size: 1.2em;
+  color: var(--dark--gray);
+  border: 2px solid var(--dark--gray);
+  margin: 15px 0;
+  padding: 10px;
+  border-radius: 5px;
 }
 
+.card:hover {
+  background: var(--gray);
+}
 
 .table {
-    width: 100%;
-    /* height: 100px; */
+  width: 100%;
 }
 
 .tablecolumn {
-    border-collapse: collapse;
-    padding: 6px;
-    width: 400px;
+  border-collapse: collapse;
+  padding: 6px;
+  width: 400px;
 }
 
 .tableicon {
-    width: 30px;
-    /* background: red; */
-
+  width: 30px;
 }
 
 .iconsbottom {
-    margin-bottom: 7px;
+  margin-bottom: 7px;
 }
 
 .table tr td span {
-    font-weight: bold; 
-    /* margin: 10 0; */
-    /* margin-left: 20px; */
-    
+  font-weight: bold;
 }
 
 .img {
-    filter: brightness(100);
-    cursor: pointer;
-    /* transition: 0.3s; */
-
+  filter: brightness(100);
+  cursor: pointer;
 }
 
 .img:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
-/* .card {
-    justify-content: space-around;
-} */
+
+@media screen and (max-width: 800px) {
+  .tableicon p img {
+    width: 22px;
+  }
+
+  .card {
+    font-size: 0.6em;
+  }
+}

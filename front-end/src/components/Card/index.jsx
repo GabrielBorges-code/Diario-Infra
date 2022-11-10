@@ -1,6 +1,5 @@
-import style from "./style.module.css";
+import styles from "./styles.module.css";
 
-// import Edit from "../../assets/icons/edit.png";
 import Delete from "../../assets/icons/delete.png";
 import View from "../../assets/icons/view.png";
 import { useNavigate } from "react-router";
@@ -24,7 +23,7 @@ export default function Card({
     const deleteConfirm = window.confirm("Você tem certeza que deseja apagar?");
 
     if (deleteConfirm) {
-      fetch(`http://localhost:3001/api/diario-infra/${id}`, {
+      fetch(`http://10.105.80.191:3001/api/diario-infra/${id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -35,47 +34,35 @@ export default function Card({
     }
   };
 
-  // const handleNavigateToEditPage = (id) => {
-  //   // window.alert(id)
-  //   navigate(`/editar-chamado/${id}`)
-  // }
-
   return (
-    <div className={style.card}>
-      <table className={style.table}>
+    <div className={styles.card}>
+      <table className={styles.table}>
         <tbody>
           
           <tr>
-            <td className={style.tablecolumn}>
+            <td className={styles.tablecolumn}>
               <span>Turno:</span> {turno}
             </td>
-            <td className={style.tablecolumn}>
+            <td className={styles.tablecolumn}>
               <span>Data e Hora:</span> {dataEHora}
             </td>
-            <td className={style.tablecolumn}>
+            <td className={styles.tablecolumn}>
               <span>NOC Responsável:</span> {nocResponsavel}
             </td>
 
-            <td className={style.tableicon} rowSpan="4">
+            <td className={styles.tableicon} rowSpan="4">
               <p>
                 <img
-                  className={style.img}
+                  className={styles.img}
                   src={View}
                   alt="imagem visualizar"
                   onClick={() => handleNavigateToPage(id)}
                 />
               </p>
-              {/* <p className={style.iconsbottom}>
-                <img 
-                  className={style.img}  
-                  src={Edit} 
-                  alt="imagem editar" 
-                  onClick={() => handleNavigateToEditPage(id)}
-                />
-              </p> */}
-              <p className={style.iconsbottom}>
+
+              <p className={styles.iconsbottom}>
                 <img
-                  className={style.img}
+                  className={styles.img}
                   src={Delete}
                   alt="imagem excluir"
                   onClick={() => handleDeleteShift(id)}
@@ -85,13 +72,13 @@ export default function Card({
           </tr>
 
           <tr>
-            <td className={style.tablecolumn}>
+            <td className={styles.tablecolumn}>
               <span>Nº do Chamado:</span> {nChamado}{" "}
             </td>
-            <td className={style.tablecolumn}>
+            <td className={styles.tablecolumn}>
               <span>Tipo de Requisição:</span> {tipoRequisicao}
             </td>
-            <td className={style.tablecolumn}>
+            <td className={styles.tablecolumn}>
               <span>Prioridade:</span> {prioridade}
             </td>
           </tr>

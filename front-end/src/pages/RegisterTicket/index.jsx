@@ -17,13 +17,12 @@ export default function RegisterTicket() {
   const {
     control,
     handleSubmit,
-    // watch,
     formState: { errors },
   } = useForm();
   
   const onSubmit = (data) => {
     try {
-      fetch("http://localhost:3001/api/diario-infra", {
+      fetch("http://10.105.80.191:3001/api/diario-infra", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -56,7 +55,6 @@ export default function RegisterTicket() {
 
         <Input
           label="Data e Hora do CA"
-          // type="datetime-local"
           mask="00/00/0000 00:00"
           placeholder="dd/mm/aaaa hh:mm"
           name="date_and_time_ticket"
@@ -65,7 +63,6 @@ export default function RegisterTicket() {
 
         <Input
           label="Número do Chamado"
-          // type="number"
           name="num_ticket"
           control={control}
           mask="000000"
@@ -89,13 +86,6 @@ export default function RegisterTicket() {
           name="responsible_NOC"
           control={control}
         />
-
-        {/* <Input
-          label="Prioridade"
-          // type="text"
-          name="priority"
-          control={control}
-        /> */}
 
         <Select
           label="Prioridade"
@@ -128,14 +118,12 @@ export default function RegisterTicket() {
 
         <Input
           label="Responsável Acionado"
-          // type="text"
           name="responsible_triggered"
           control={control}
         />
 
         <Input
           label="Hora do acionamento"
-          // type="time"
           mask="00:00"
           placeholder="hh:mm"
           name="activation_time"
@@ -147,13 +135,6 @@ export default function RegisterTicket() {
           name="out_of_office"
           control={control}
         />
-
-        {/* <Input 
-          label="Status" 
-          // type="text" 
-          name="status" 
-          control={control} 
-        /> */}
 
         <Select
           label="Status"
@@ -169,9 +150,9 @@ export default function RegisterTicket() {
           control={control}
         />
 
-        <Input
+        <Select
           label="Tipo de acionamento"
-          // type="text"
+          options={["Ligação", "Teams", "WhatsApp", "Presencial"]}
           name="type_of_activation"
           control={control}
         />

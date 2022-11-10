@@ -14,7 +14,7 @@ export default function DetailedShift() {
   const { id } = useParams();
 
   useEffect(() => {
-    fetch(`http://localhost:3001/api/passagem-de-turno/${id}`, {
+    fetch(`http://10.105.80.191:3001/api/passagem-de-turno/${id}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -32,7 +32,7 @@ export default function DetailedShift() {
     const deleteConfirm = window.confirm("Você tem certeza que deseja apagar?");
 
     if (deleteConfirm) {
-      fetch(`http://localhost:3001/api/passagem-de-turno/${id}`, {
+      fetch(`http://10.105.80.191:3001/api/passagem-de-turno/${id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -48,14 +48,10 @@ export default function DetailedShift() {
     }
   };
 
-  // const handleNavigateToEditPage = (id) => {
-  //   navigate(`/editar-chamado/${id}`)
-  // }
-
   return (
     <Container>
       <h1>
-        {database.responsible_NOC} - {database.date_and_time_shift} {database.shift}
+        Detalhes do Turno - {database.date_and_time_shift} - {database.shift}
       </h1>
 
       <DetailedCardShift
@@ -72,11 +68,6 @@ export default function DetailedShift() {
   
 
       <div className={styles.inline}>
-        {/* <Button 
-          text="Editar" 
-          type="button" 
-          onClick={() => handleNavigateToEditPage(id)}
-        /> */}
         <Button 
           text="Excluir" 
           type="button"

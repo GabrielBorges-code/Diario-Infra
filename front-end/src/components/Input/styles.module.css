@@ -2,17 +2,16 @@
     width: 100%;
     height: 40px;
     border-radius: 5px;
-    background-color: var(--text);
+    background-color: var(--gray);
     margin: 15px 0;
-    padding: 0;
-    border: none;
+    padding: 0 18px;
+    box-sizing: border-box;
 }
 
 .input, .label {
     font-size: 1.75em;
-    color: var(--white);
 }
 
 .input::placeholder {
-    color: var(--white);
+    color: var(--dark--gray);
 }
